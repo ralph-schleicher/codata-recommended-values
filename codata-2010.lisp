@@ -73,7 +73,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mal>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?malc2>.")
 
 (define-constant alpha-particle-mass-energy-equivalent-in-MeV
-    (3727.379240 0.000082 2.2L-8)
+    (3727.379240L0 0.000082L0 2.2L-8)
   "Alpha particle mass energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -81,7 +81,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?malc2>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?malc2mev>.")
 
 (define-constant alpha-particle-mass-in-u
-    (4.001506179125 0.000000000062 1.5L-11)
+    (4.001506179125L0 0.000000000062L0 1.5L-11)
   "Alpha particle mass in u.
 
 2010 CODATA recommended value.
@@ -97,7 +97,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?malu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmal>.")
 
 (define-constant alpha-particle-electron-mass-ratio
-    (7294.2995361 0.0000029 4.0L-10)
+    (7294.2995361L0 0.0000029L0 4.0L-10)
   "Alpha particle-electron mass ratio.
 
 2010 CODATA recommended value.
@@ -105,7 +105,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmal>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?malsme>.")
 
 (define-constant alpha-particle-proton-mass-ratio
-    (3.97259968933 0.00000000036 9.0L-11)
+    (3.97259968933L0 0.00000000036L0 9.0L-11)
   "Alpha particle-proton mass ratio.
 
 2010 CODATA recommended value.
@@ -137,7 +137,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?u>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?tuj>.")
 
 (define-constant atomic-mass-constant-energy-equivalent-in-MeV
-    (931.494061 0.000021 2.2L-8)
+    (931.494061L0 0.000021L0 2.2L-8)
   "Atomic mass constant energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -281,7 +281,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?auefg>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?auepol>.")
 
 (define-constant atomic-unit-of-electric-potential
-    (27.21138505 0.00000060 2.2L-8)
+    (27.21138505L0 0.00000060L0 2.2L-8)
   "Atomic unit of electric potential.
 
 2010 CODATA recommended value.
@@ -417,7 +417,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mubev>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mubshhz>.")
 
 (define-constant Bohr-magneton-in-inverse-meters-per-tesla
-    (46.6864498 0.0000010 2.2L-8)
+    (46.6864498L0 0.0000010L0 2.2L-8)
   "Bohr magneton in inverse meters per tesla.
 
 2010 CODATA recommended value.
@@ -425,7 +425,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mubshhz>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mubshcminv>.")
 
 (define-constant Bohr-magneton-inK/T
-    (0.67171388 0.00000061 9.1L-7)
+    (0.67171388L0 0.00000061L0 9.1L-7)
   "Bohr magneton in k/t.
 
 2010 CODATA recommended value.
@@ -465,7 +465,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?tkev>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?kshhz>.")
 
 (define-constant Boltzmann-constant-in-inverse-meters-per-kelvin
-    (69.503476 0.000063 9.1L-7)
+    (69.503476L0 0.000063L0 9.1L-7)
   "Boltzmann constant in inverse meters per kelvin.
 
 2010 CODATA recommended value.
@@ -521,7 +521,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?conqu2e2sh>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?kj90>.")
 
 (define-constant conventional-value-of-von-Klitzing-constant
-    (25812.807 0 0)
+    (25812.807L0 0 0)
   "Conventional value of von klitzing constant.
 
 2010 CODATA recommended value.
@@ -537,7 +537,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?rk90>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?xucukalph1>.")
 
 (define-constant deuteron-g-factor
-    (0.8574382308 0.0000000072 8.4L-9)
+    (0.8574382308L0 0.0000000072L0 8.4L-9)
   "Deuteron g factor.
 
 2010 CODATA recommended value.
@@ -561,7 +561,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mud>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mudsmub>.")
 
 (define-constant deuteron-magnetic-moment-to-nuclear-magneton-ratio
-    (0.8574382308 0.0000000072 8.4L-9)
+    (0.8574382308L0 0.0000000072L0 8.4L-9)
   "Deuteron magnetic moment to nuclear magneton ratio.
 
 2010 CODATA recommended value.
@@ -585,7 +585,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?md>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mdc2>.")
 
 (define-constant deuteron-mass-energy-equivalent-in-MeV
-    (1875.612859 0.000041 2.2L-8)
+    (1875.612859L0 0.000041L0 2.2L-8)
   "Deuteron mass energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -593,7 +593,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mdc2>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mdc2mev>.")
 
 (define-constant deuteron-mass-in-u
-    (2.013553212712 0.000000000077 3.8L-11)
+    (2.013553212712L0 0.000000000077L0 3.8L-11)
   "Deuteron mass in u.
 
 2010 CODATA recommended value.
@@ -625,7 +625,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?rd>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mudsmuem>.")
 
 (define-constant deuteron-electron-mass-ratio
-    (3670.4829652 0.0000015 4.0L-10)
+    (3670.4829652L0 0.0000015L0 4.0L-10)
   "Deuteron-electron mass ratio.
 
 2010 CODATA recommended value.
@@ -633,7 +633,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mudsmuem>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mdsme>.")
 
 (define-constant deuteron-neutron-magnetic-moment-ratio
-    (-0.44820652 0.00000011 2.4L-7)
+    (-0.44820652L0 0.00000011L0 2.4L-7)
   "Deuteron-neutron magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -641,7 +641,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mdsme>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mudsmunn>.")
 
 (define-constant deuteron-proton-magnetic-moment-ratio
-    (0.3070122070 0.0000000024 7.7L-9)
+    (0.3070122070L0 0.0000000024L0 7.7L-9)
   "Deuteron-proton magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -649,7 +649,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mudsmunn>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mudsmup>.")
 
 (define-constant deuteron-proton-mass-ratio
-    (1.99900750097 0.00000000018 9.2L-11)
+    (1.99900750097L0 0.00000000018L0 9.2L-11)
   "Deuteron-proton mass ratio.
 
 2010 CODATA recommended value.
@@ -673,7 +673,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?ep0>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?esme>.")
 
 (define-constant electron-g-factor
-    (-2.00231930436153 0.00000000000053 2.6L-13)
+    (-2.00231930436153L0 0.00000000000053L0 2.6L-13)
   "Electron g factor.
 
 2010 CODATA recommended value.
@@ -689,7 +689,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?gem>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?gammae>.")
 
 (define-constant electron-gyromagnetic-ratio-over-2-pi
-    (28024.95266 0.00062 2.2L-8)
+    (28024.95266L0 0.00062L0 2.2L-8)
   "Electron gyromagnetic ratio over 2 pi.
 
 2010 CODATA recommended value.
@@ -713,7 +713,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muem>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?ae>.")
 
 (define-constant electron-magnetic-moment-to-Bohr-magneton-ratio
-    (-1.00115965218076 0.00000000000027 2.6L-13)
+    (-1.00115965218076L0 0.00000000000027L0 2.6L-13)
   "Electron magnetic moment to bohr magneton ratio.
 
 2010 CODATA recommended value.
@@ -721,7 +721,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?ae>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?muemsmub>.")
 
 (define-constant electron-magnetic-moment-to-nuclear-magneton-ratio
-    (-1838.28197090 0.00000075 4.1L-10)
+    (-1838.28197090L0 0.00000075L0 4.1L-10)
   "Electron magnetic moment to nuclear magneton ratio.
 
 2010 CODATA recommended value.
@@ -745,7 +745,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?me>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mec2>.")
 
 (define-constant electron-mass-energy-equivalent-in-MeV
-    (0.510998928 0.000000011 2.2L-8)
+    (0.510998928L0 0.000000011L0 2.2L-8)
   "Electron mass energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -777,7 +777,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mme>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mesmalpha>.")
 
 (define-constant electron-to-shielded-helion-magnetic-moment-ratio
-    (864.058257 0.000010 1.2L-8)
+    (864.058257L0 0.000010L0 1.2L-8)
   "Electron to shielded helion magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -785,7 +785,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mesmalpha>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?muemsmuhp>.")
 
 (define-constant electron-to-shielded-proton-magnetic-moment-ratio
-    (-658.2275971 0.0000072 1.1L-8)
+    (-658.2275971L0 0.0000072L0 1.1L-8)
   "Electron to shielded proton magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -857,7 +857,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?evk>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?evkg>.")
 
 (define-constant electron-deuteron-magnetic-moment-ratio
-    (-2143.923498 0.000018 8.4L-9)
+    (-2143.923498L0 0.000018L0 8.4L-9)
   "Electron-deuteron magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -881,7 +881,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mesmd>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mesmh>.")
 
 (define-constant electron-muon-magnetic-moment-ratio
-    (206.7669896 0.0000052 2.5L-8)
+    (206.7669896L0 0.0000052L0 2.5L-8)
   "Electron-muon magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -897,7 +897,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muemsmumum>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mesmmu>.")
 
 (define-constant electron-neutron-magnetic-moment-ratio
-    (960.92050 0.00023 2.4L-7)
+    (960.92050L0 0.00023L0 2.4L-7)
   "Electron-neutron magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -913,7 +913,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muemsmunn>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mesmn>.")
 
 (define-constant electron-proton-magnetic-moment-ratio
-    (-658.2106848 0.0000054 8.1L-9)
+    (-658.2106848L0 0.0000054L0 8.1L-9)
   "Electron-proton magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -961,7 +961,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?e>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?esh>.")
 
 (define-constant Faraday-constant
-    (96485.3365 0.0021 2.2L-8)
+    (96485.3365L0 0.0021L0 2.2L-8)
   "Faraday constant.
 
 2010 CODATA recommended value.
@@ -969,7 +969,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?esh>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?f>.")
 
 (define-constant Faraday-constant-for-conventional-electric-current
-    (96485.3321 0.0043 4.4L-8)
+    (96485.3321L0 0.0043L0 4.4L-8)
   "Faraday constant for conventional electric current.
 
 2010 CODATA recommended value.
@@ -1017,7 +1017,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?c1l>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?hr>.")
 
 (define-constant Hartree-energy-in-eV
-    (27.21138505 0.00000060 2.2L-8)
+    (27.21138505L0 0.00000060L0 2.2L-8)
   "Hartree energy in ev.
 
 2010 CODATA recommended value.
@@ -1033,7 +1033,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?threv>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?hru>.")
 
 (define-constant hartree-electron-volt-relationship
-    (27.21138505 0.00000060 2.2L-8)
+    (27.21138505L0 0.00000060L0 2.2L-8)
   "Hartree-electron volt relationship.
 
 2010 CODATA recommended value.
@@ -1081,7 +1081,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?hrk>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?hrkg>.")
 
 (define-constant helion-g-factor
-    (-4.255250613 0.000000050 1.2L-8)
+    (-4.255250613L0 0.000000050L0 1.2L-8)
   "Helion g factor.
 
 2010 CODATA recommended value.
@@ -1105,7 +1105,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muh>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?muhsmub>.")
 
 (define-constant helion-magnetic-moment-to-nuclear-magneton-ratio
-    (-2.127625306 0.000000025 1.2L-8)
+    (-2.127625306L0 0.000000025L0 1.2L-8)
   "Helion magnetic moment to nuclear magneton ratio.
 
 2010 CODATA recommended value.
@@ -1129,7 +1129,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mh>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mhc2>.")
 
 (define-constant helion-mass-energy-equivalent-in-MeV
-    (2808.391482 0.000062 2.2L-8)
+    (2808.391482L0 0.000062L0 2.2L-8)
   "Helion mass energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -1137,7 +1137,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mhc2>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mhc2mev>.")
 
 (define-constant helion-mass-in-u
-    (3.0149322468 0.0000000025 8.3L-10)
+    (3.0149322468L0 0.0000000025L0 8.3L-10)
   "Helion mass in u.
 
 2010 CODATA recommended value.
@@ -1153,7 +1153,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mhu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmh>.")
 
 (define-constant helion-electron-mass-ratio
-    (5495.8852754 0.0000050 9.2L-10)
+    (5495.8852754L0 0.0000050L0 9.2L-10)
   "Helion-electron mass ratio.
 
 2010 CODATA recommended value.
@@ -1161,7 +1161,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmh>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mhsme>.")
 
 (define-constant helion-proton-mass-ratio
-    (2.9931526707 0.0000000025 8.2L-10)
+    (2.9931526707L0 0.0000000025L0 8.2L-10)
   "Helion-proton mass ratio.
 
 2010 CODATA recommended value.
@@ -1225,7 +1225,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?hzk>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?hzkg>.")
 
 (define-constant inverse-fine-structure-constant
-    (137.035999074 0.000000044 3.2L-10)
+    (137.035999074L0 0.000000044L0 3.2L-10)
   "Inverse fine-structure constant.
 
 2010 CODATA recommended value.
@@ -1289,7 +1289,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?minvk>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?minvkg>.")
 
 (define-constant inverse-of-conductance-quantum
-    (12906.4037217 0.0000042 3.2L-10)
+    (12906.4037217L0 0.0000042L0 3.2L-10)
   "Inverse of conductance quantum.
 
 2010 CODATA recommended value.
@@ -1393,7 +1393,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?khr>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?khz>.")
 
 (define-constant kelvin-inverse-meter-relationship
-    (69.503476 0.000063 9.1L-7)
+    (69.503476L0 0.000063L0 9.1L-7)
   "Kelvin-inverse meter relationship.
 
 2010 CODATA recommended value.
@@ -1521,7 +1521,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?flxquhs2e>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?xumokalph1>.")
 
 (define-constant molar-gas-constant
-    (8.3144621 0.0000075 9.1L-7)
+    (8.3144621L0 0.0000075L0 9.1L-7)
   "Molar gas constant.
 
 2010 CODATA recommended value.
@@ -1553,7 +1553,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mm12c>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?nah>.")
 
 (define-constant molar-Planck-constant-times-c
-    (0.119626565779 0.000000000084 7.0L-10)
+    (0.119626565779L0 0.000000000084L0 7.0L-10)
   "Molar planck constant times c.
 
 2010 CODATA recommended value.
@@ -1601,7 +1601,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mcomwl>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mcomwlbar>.")
 
 (define-constant muon-g-factor
-    (-2.0023318418 0.0000000013 6.3L-10)
+    (-2.0023318418L0 0.0000000013L0 6.3L-10)
   "Muon g factor.
 
 2010 CODATA recommended value.
@@ -1633,7 +1633,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?amu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mumumsmub>.")
 
 (define-constant muon-magnetic-moment-to-nuclear-magneton-ratio
-    (-8.89059697 0.00000022 2.5L-8)
+    (-8.89059697L0 0.00000022L0 2.5L-8)
   "Muon magnetic moment to nuclear magneton ratio.
 
 2010 CODATA recommended value.
@@ -1657,7 +1657,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmuc2>.")
 
 (define-constant muon-mass-energy-equivalent-in-MeV
-    (105.6583715 0.0000035 3.4L-8)
+    (105.6583715L0 0.0000035L0 3.4L-8)
   "Muon mass energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -1665,7 +1665,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmuc2>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmuc2mev>.")
 
 (define-constant muon-mass-in-u
-    (0.1134289267 0.0000000029 2.5L-8)
+    (0.1134289267L0 0.0000000029L0 2.5L-8)
   "Muon mass in u.
 
 2010 CODATA recommended value.
@@ -1681,7 +1681,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmuu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmmu>.")
 
 (define-constant muon-electron-mass-ratio
-    (206.7682843 0.0000052 2.5L-8)
+    (206.7682843L0 0.0000052L0 2.5L-8)
   "Muon-electron mass ratio.
 
 2010 CODATA recommended value.
@@ -1689,7 +1689,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmmu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmusme>.")
 
 (define-constant muon-neutron-mass-ratio
-    (0.1124545177 0.0000000028 2.5L-8)
+    (0.1124545177L0 0.0000000028L0 2.5L-8)
   "Muon-neutron mass ratio.
 
 2010 CODATA recommended value.
@@ -1697,7 +1697,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmusme>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmusmn>.")
 
 (define-constant muon-proton-magnetic-moment-ratio
-    (-3.183345107 0.000000084 2.6L-8)
+    (-3.183345107L0 0.000000084L0 2.6L-8)
   "Muon-proton magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -1705,7 +1705,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmusmn>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mumumsmup>.")
 
 (define-constant muon-proton-mass-ratio
-    (0.1126095272 0.0000000028 2.5L-8)
+    (0.1126095272L0 0.0000000028L0 2.5L-8)
   "Muon-proton mass ratio.
 
 2010 CODATA recommended value.
@@ -1745,7 +1745,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?thbarev>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?tmec2>.")
 
 (define-constant natural-unit-of-energy-in-MeV
-    (0.510998928 0.000000011 2.2L-8)
+    (0.510998928L0 0.000000011L0 2.2L-8)
   "Natural unit of energy in mev.
 
 2010 CODATA recommended value.
@@ -1777,7 +1777,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?tme>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mec>.")
 
 (define-constant natural-unit-of-momentum-in-MeV/c
-    (0.510998928 0.000000011 2.2L-8)
+    (0.510998928L0 0.000000011L0 2.2L-8)
   "Natural unit of momentum in mev/c.
 
 2010 CODATA recommended value.
@@ -1817,7 +1817,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?ncomwl>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?ncomwlbar>.")
 
 (define-constant neutron-g-factor
-    (-3.82608545 0.00000090 2.4L-7)
+    (-3.82608545L0 0.00000090L0 2.4L-7)
   "Neutron g factor.
 
 2010 CODATA recommended value.
@@ -1833,7 +1833,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?gnn>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?gamman>.")
 
 (define-constant neutron-gyromagnetic-ratio-over-2-pi
-    (29.1646943 0.0000069 2.4L-7)
+    (29.1646943L0 0.0000069L0 2.4L-7)
   "Neutron gyromagnetic ratio over 2 pi.
 
 2010 CODATA recommended value.
@@ -1857,7 +1857,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?munn>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?munsmub>.")
 
 (define-constant neutron-magnetic-moment-to-nuclear-magneton-ratio
-    (-1.91304272 0.00000045 2.4L-7)
+    (-1.91304272L0 0.00000045L0 2.4L-7)
   "Neutron magnetic moment to nuclear magneton ratio.
 
 2010 CODATA recommended value.
@@ -1881,7 +1881,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mn>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mnc2>.")
 
 (define-constant neutron-mass-energy-equivalent-in-MeV
-    (939.565379 0.000021 2.2L-8)
+    (939.565379L0 0.000021L0 2.2L-8)
   "Neutron mass energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -1889,7 +1889,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mnc2>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mnc2mev>.")
 
 (define-constant neutron-mass-in-u
-    (1.00866491600 0.00000000043 4.2L-10)
+    (1.00866491600L0 0.00000000043L0 4.2L-10)
   "Neutron mass in u.
 
 2010 CODATA recommended value.
@@ -1905,7 +1905,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mnu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmn>.")
 
 (define-constant neutron-to-shielded-proton-magnetic-moment-ratio
-    (-0.68499694 0.00000016 2.4L-7)
+    (-0.68499694L0 0.00000016L0 2.4L-7)
   "Neutron to shielded proton magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -1921,7 +1921,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?munsmupp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?munsmue>.")
 
 (define-constant neutron-electron-mass-ratio
-    (1838.6836605 0.0000011 5.8L-10)
+    (1838.6836605L0 0.0000011L0 5.8L-10)
   "Neutron-electron mass ratio.
 
 2010 CODATA recommended value.
@@ -1929,7 +1929,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?munsmue>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mnsme>.")
 
 (define-constant neutron-muon-mass-ratio
-    (8.89248400 0.00000022 2.5L-8)
+    (8.89248400L0 0.00000022L0 2.5L-8)
   "Neutron-muon mass ratio.
 
 2010 CODATA recommended value.
@@ -1937,7 +1937,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mnsme>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mnsmmu>.")
 
 (define-constant neutron-proton-magnetic-moment-ratio
-    (-0.68497934 0.00000016 2.4L-7)
+    (-0.68497934L0 0.00000016L0 2.4L-7)
   "Neutron-proton magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -1961,7 +1961,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mnmmp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mnmmpc2>.")
 
 (define-constant neutron-proton-mass-difference-energy-equivalent-in-MeV
-    (1.29333217 0.00000042 3.3L-7)
+    (1.29333217L0 0.00000042L0 3.3L-7)
   "Neutron-proton mass difference energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -1969,7 +1969,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mnmmpc2>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mnmmpc2mev>.")
 
 (define-constant neutron-proton-mass-difference-in-u
-    (0.00138844919 0.00000000045 3.3L-7)
+    (0.00138844919L0 0.00000000045L0 3.3L-7)
   "Neutron-proton mass difference in u.
 
 2010 CODATA recommended value.
@@ -1977,7 +1977,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mnmmpc2mev>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mnmmpu>.")
 
 (define-constant neutron-proton-mass-ratio
-    (1.00137841917 0.00000000045 4.5L-10)
+    (1.00137841917L0 0.00000000045L0 4.5L-10)
   "Neutron-proton mass ratio.
 
 2010 CODATA recommended value.
@@ -1985,7 +1985,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mnmmpu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mnsmp>.")
 
 (define-constant neutron-tau-mass-ratio
-    (0.528790 0.000048 9.0L-5)
+    (0.528790L0 0.000048L0 9.0L-5)
   "Neutron-tau mass ratio.
 
 2010 CODATA recommended value.
@@ -2041,7 +2041,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?munshcminv>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?munskk>.")
 
 (define-constant nuclear-magneton-in-MHz/T
-    (7.62259357 0.00000017 2.2L-8)
+    (7.62259357L0 0.00000017L0 2.2L-8)
   "Nuclear magneton in mhz/t.
 
 2010 CODATA recommended value.
@@ -2081,7 +2081,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?hbar>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?hbarev>.")
 
 (define-constant Planck-constant-over-2-pi-times-c-in-MeV-fm
-    (197.3269718 0.0000044 2.2L-8)
+    (197.3269718L0 0.0000044L0 2.2L-8)
   "Planck constant over 2 pi times c in mev fm.
 
 2010 CODATA recommended value.
@@ -2153,7 +2153,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?pcomwl>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?pcomwlbar>.")
 
 (define-constant proton-g-factor
-    (5.585694713 0.000000046 8.2L-9)
+    (5.585694713L0 0.000000046L0 8.2L-9)
   "Proton g factor.
 
 2010 CODATA recommended value.
@@ -2169,7 +2169,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?gp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?gammap>.")
 
 (define-constant proton-gyromagnetic-ratio-over-2-pi
-    (42.5774806 0.0000010 2.4L-8)
+    (42.5774806L0 0.0000010L0 2.4L-8)
   "Proton gyromagnetic ratio over 2 pi.
 
 2010 CODATA recommended value.
@@ -2193,7 +2193,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mup>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mupsmub>.")
 
 (define-constant proton-magnetic-moment-to-nuclear-magneton-ratio
-    (2.792847356 0.000000023 8.2L-9)
+    (2.792847356L0 0.000000023L0 8.2L-9)
   "Proton magnetic moment to nuclear magneton ratio.
 
 2010 CODATA recommended value.
@@ -2225,7 +2225,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mpc2>.")
 
 (define-constant proton-mass-energy-equivalent-in-MeV
-    (938.272046 0.000021 2.2L-8)
+    (938.272046L0 0.000021L0 2.2L-8)
   "Proton mass energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -2233,7 +2233,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mpc2>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mpc2mev>.")
 
 (define-constant proton-mass-in-u
-    (1.007276466812 0.000000000090 8.9L-11)
+    (1.007276466812L0 0.000000000090L0 8.9L-11)
   "Proton mass in u.
 
 2010 CODATA recommended value.
@@ -2257,7 +2257,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?rp>.")
 
 (define-constant proton-electron-mass-ratio
-    (1836.15267245 0.00000075 4.1L-10)
+    (1836.15267245L0 0.00000075L0 4.1L-10)
   "Proton-electron mass ratio.
 
 2010 CODATA recommended value.
@@ -2265,7 +2265,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?rp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mpsme>.")
 
 (define-constant proton-muon-mass-ratio
-    (8.88024331 0.00000022 2.5L-8)
+    (8.88024331L0 0.00000022L0 2.5L-8)
   "Proton-muon mass ratio.
 
 2010 CODATA recommended value.
@@ -2273,7 +2273,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mpsme>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mpsmmu>.")
 
 (define-constant proton-neutron-magnetic-moment-ratio
-    (-1.45989806 0.00000034 2.4L-7)
+    (-1.45989806L0 0.00000034L0 2.4L-7)
   "Proton-neutron magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -2281,7 +2281,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mpsmmu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mupsmunn>.")
 
 (define-constant proton-neutron-mass-ratio
-    (0.99862347826 0.00000000045 4.5L-10)
+    (0.99862347826L0 0.00000000045L0 4.5L-10)
   "Proton-neutron mass ratio.
 
 2010 CODATA recommended value.
@@ -2289,7 +2289,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mupsmunn>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mpsmn>.")
 
 (define-constant proton-tau-mass-ratio
-    (0.528063 0.000048 9.0L-5)
+    (0.528063L0 0.000048L0 9.0L-5)
   "Proton-tau mass ratio.
 
 2010 CODATA recommended value.
@@ -2313,7 +2313,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?qucirchs2me>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?hsme>.")
 
 (define-constant Rydberg-constant
-    (10973731.568539 0.000055 5.0L-12)
+    (10973731.568539L0 0.000055L0 5.0L-12)
   "Rydberg constant.
 
 2010 CODATA recommended value.
@@ -2329,7 +2329,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?ryd>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?rydchz>.")
 
 (define-constant Rydberg-constant-times-hc-in-eV
-    (13.60569253 0.00000030 2.2L-8)
+    (13.60569253L0 0.00000030L0 2.2L-8)
   "Rydberg constant times hc in ev.
 
 2010 CODATA recommended value.
@@ -2345,7 +2345,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?rydhcev>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?rydhcj>.")
 
 (define-constant Sackur-Tetrode-constant-at-1K-and-100000Pa
-    (-1.1517078 0.0000023 2.0L-6)
+    (-1.1517078L0 0.0000023L0 2.0L-6)
   "Sackur-tetrode constant (1 k, 100000 pa).
 
 2010 CODATA recommended value.
@@ -2353,7 +2353,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?rydhcj>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?s0sr>.")
 
 (define-constant Sackur-Tetrode-constant-at-1K-and-101325Pa
-    (-1.1648708 0.0000023 1.9L-6)
+    (-1.1648708L0 0.0000023L0 1.9L-6)
   "Sackur-tetrode constant (1 k, 101325 pa).
 
 2010 CODATA recommended value.
@@ -2377,7 +2377,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?c22ndrc>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?gammahp>.")
 
 (define-constant shielded-helion-gyromagnetic-ratio-over-2-pi
-    (32.43410084 0.00000081 2.5L-8)
+    (32.43410084L0 0.00000081L0 2.5L-8)
   "Shielded helion gyromagnetic ratio over 2 pi.
 
 2010 CODATA recommended value.
@@ -2401,7 +2401,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muhp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?muhpsmub>.")
 
 (define-constant shielded-helion-magnetic-moment-to-nuclear-magneton-ratio
-    (-2.127497718 0.000000025 1.2L-8)
+    (-2.127497718L0 0.000000025L0 1.2L-8)
   "Shielded helion magnetic moment to nuclear magneton ratio.
 
 2010 CODATA recommended value.
@@ -2409,7 +2409,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muhpsmub>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?muhpsmun>.")
 
 (define-constant shielded-helion-to-proton-magnetic-moment-ratio
-    (-0.761766558 0.000000011 1.4L-8)
+    (-0.761766558L0 0.000000011L0 1.4L-8)
   "Shielded helion to proton magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -2417,7 +2417,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muhpsmun>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?muhpsmup>.")
 
 (define-constant shielded-helion-to-shielded-proton-magnetic-moment-ratio
-    (-0.7617861313 0.0000000033 4.3L-9)
+    (-0.7617861313L0 0.0000000033L0 4.3L-9)
   "Shielded helion to shielded proton magnetic moment ratio.
 
 2010 CODATA recommended value.
@@ -2433,7 +2433,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muhpsmupp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?gammapp>.")
 
 (define-constant shielded-proton-gyromagnetic-ratio-over-2-pi
-    (42.5763866 0.0000010 2.5L-8)
+    (42.5763866L0 0.0000010L0 2.5L-8)
   "Shielded proton gyromagnetic ratio over 2 pi.
 
 2010 CODATA recommended value.
@@ -2457,7 +2457,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mupp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?muppsmub>.")
 
 (define-constant shielded-proton-magnetic-moment-to-nuclear-magneton-ratio
-    (2.792775598 0.000000030 1.1L-8)
+    (2.792775598L0 0.000000030L0 1.1L-8)
   "Shielded proton magnetic moment to nuclear magneton ratio.
 
 2010 CODATA recommended value.
@@ -2473,7 +2473,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muppsmun>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?c>.")
 
 (define-constant standard-acceleration-of-gravity
-    (9.80665 0 0)
+    (9.80665L0 0 0)
   "Standard acceleration of gravity.
 
 2010 CODATA recommended value.
@@ -2537,7 +2537,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtau>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mtauc2>.")
 
 (define-constant tau-mass-energy-equivalent-in-MeV
-    (1776.82 0.16 9.0L-5)
+    (1776.82L0 0.16L0 9.0L-5)
   "Tau mass energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -2545,7 +2545,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtauc2>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mtauc2mev>.")
 
 (define-constant tau-mass-in-u
-    (1.90749 0.00017 9.0L-5)
+    (1.90749L0 0.00017L0 9.0L-5)
   "Tau mass in u.
 
 2010 CODATA recommended value.
@@ -2561,7 +2561,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtauu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmtau>.")
 
 (define-constant tau-electron-mass-ratio
-    (3477.15 0.31 9.0L-5)
+    (3477.15L0 0.31L0 9.0L-5)
   "Tau-electron mass ratio.
 
 2010 CODATA recommended value.
@@ -2569,7 +2569,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmtau>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mtausme>.")
 
 (define-constant tau-muon-mass-ratio
-    (16.8167 0.0015 9.0L-5)
+    (16.8167L0 0.0015L0 9.0L-5)
   "Tau-muon mass ratio.
 
 2010 CODATA recommended value.
@@ -2577,7 +2577,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtausme>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mtausmmu>.")
 
 (define-constant tau-neutron-mass-ratio
-    (1.89111 0.00017 9.0L-5)
+    (1.89111L0 0.00017L0 9.0L-5)
   "Tau-neutron mass ratio.
 
 2010 CODATA recommended value.
@@ -2585,7 +2585,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtausmmu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mtausmn>.")
 
 (define-constant tau-proton-mass-ratio
-    (1.89372 0.00017 9.0L-5)
+    (1.89372L0 0.00017L0 9.0L-5)
   "Tau-proton mass ratio.
 
 2010 CODATA recommended value.
@@ -2601,7 +2601,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtausmp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?sigmae>.")
 
 (define-constant triton-g-factor
-    (5.957924896 0.000000076 1.3L-8)
+    (5.957924896L0 0.000000076L0 1.3L-8)
   "Triton g factor.
 
 2010 CODATA recommended value.
@@ -2625,7 +2625,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mut>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mutsmub>.")
 
 (define-constant triton-magnetic-moment-to-nuclear-magneton-ratio
-    (2.978962448 0.000000038 1.3L-8)
+    (2.978962448L0 0.000000038L0 1.3L-8)
   "Triton magnetic moment to nuclear magneton ratio.
 
 2010 CODATA recommended value.
@@ -2649,7 +2649,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mt>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mtc2>.")
 
 (define-constant triton-mass-energy-equivalent-in-MeV
-    (2808.921005 0.000062 2.2L-8)
+    (2808.921005L0 0.000062L0 2.2L-8)
   "Triton mass energy equivalent in mev.
 
 2010 CODATA recommended value.
@@ -2657,7 +2657,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtc2>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mtc2mev>.")
 
 (define-constant triton-mass-in-u
-    (3.0155007134 0.0000000025 8.2L-10)
+    (3.0155007134L0 0.0000000025L0 8.2L-10)
   "Triton mass in u.
 
 2010 CODATA recommended value.
@@ -2673,7 +2673,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtu>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mmt>.")
 
 (define-constant triton-electron-mass-ratio
-    (5496.9215267 0.0000050 9.1L-10)
+    (5496.9215267L0 0.0000050L0 9.1L-10)
   "Triton-electron mass ratio.
 
 2010 CODATA recommended value.
@@ -2681,7 +2681,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmt>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mtsme>.")
 
 (define-constant triton-proton-mass-ratio
-    (2.9937170308 0.0000000025 8.2L-10)
+    (2.9937170308L0 0.0000000025L0 8.2L-10)
   "Triton-proton mass ratio.
 
 2010 CODATA recommended value.
@@ -2697,7 +2697,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtsmp>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?tukg>.")
 
 (define-constant von-Klitzing-constant
-    (25812.8074434 0.0000084 3.2L-10)
+    (25812.8074434L0 0.0000084L0 3.2L-10)
   "Von klitzing constant.
 
 2010 CODATA recommended value.
@@ -2705,7 +2705,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?tukg>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?rk>.")
 
 (define-constant weak-mixing-angle
-    (0.2223 0.0021 9.5L-3)
+    (0.2223L0 0.0021L0 9.5L-3)
   "Weak mixing angle.
 
 2010 CODATA recommended value.
