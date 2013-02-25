@@ -111,6 +111,8 @@ Return value is a list of strings."
 	(setf string (replace-match (match-string 1))))
       (when (string-match " " string)
 	(setf string (subseq string 0 (match-start))))
+      (when (and (position #\. string) (not (position #\L string)))
+	(setf string (concatenate 'string string "L0")))
       string)))
 
 (defun wash-name (string)
