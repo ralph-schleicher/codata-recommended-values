@@ -170,11 +170,12 @@ Return value is a list of strings."
 
 (defun doc-string (key name values)
   (format nil "~
-~@(~A~).
+~A~A.
 
 2010 CODATA recommended value.
 
-See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>." name key))
+See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
+	  (char-upcase (aref name 0)) (subseq name 1) key))
 
 ;; Program entry point.
 (let (templ body)
