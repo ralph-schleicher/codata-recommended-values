@@ -74,7 +74,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?malc2>.")
 
 (define-constant alpha-particle-mass-energy-equivalent-in-MeV
     (3727.379240L0 0.000082L0 2.2L-8)
-  "Alpha particle mass energy equivalent in mev.
+  "Alpha particle mass energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -138,7 +138,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?tuj>.")
 
 (define-constant atomic-mass-constant-energy-equivalent-in-MeV
     (931.494061L0 0.000021L0 2.2L-8)
-  "Atomic mass constant energy equivalent in mev.
+  "Atomic mass constant energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -402,7 +402,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mub>.")
 
 (define-constant Bohr-magneton-in-eV/T
     (5.7883818066L-5 0.0000000038L-5 6.5L-10)
-  "Bohr magneton in ev/t.
+  "Bohr magneton in eV/T.
 
 2010 CODATA recommended value.
 
@@ -410,7 +410,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mubev>.")
 
 (define-constant Bohr-magneton-in-Hz/T
     (13.99624555L9 0.00000031L9 2.2L-8)
-  "Bohr magneton in hz/t.
+  "Bohr magneton in Hz/T.
 
 2010 CODATA recommended value.
 
@@ -426,7 +426,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mubshcminv>.")
 
 (define-constant Bohr-magneton-inK/T
     (0.67171388L0 0.00000061L0 9.1L-7)
-  "Bohr magneton in k/t.
+  "Bohr magneton in K/T.
 
 2010 CODATA recommended value.
 
@@ -450,7 +450,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?k>.")
 
 (define-constant Boltzmann-constant-in-eV/K
     (8.6173324L-5 0.0000078L-5 9.1L-7)
-  "Boltzmann constant in ev/k.
+  "Boltzmann constant in eV/K.
 
 2010 CODATA recommended value.
 
@@ -458,7 +458,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?tkev>.")
 
 (define-constant Boltzmann-constant-in-Hz/K
     (2.0836618L10 0.0000019L10 9.1L-7)
-  "Boltzmann constant in hz/k.
+  "Boltzmann constant in Hz/K.
 
 2010 CODATA recommended value.
 
@@ -514,7 +514,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?conqu2e2sh>.")
 
 (define-constant conventional-value-of-Josephson-constant
     (483597.9L9 0 0)
-  "Conventional value of josephson constant.
+  "Conventional value of Josephson constant.
 
 2010 CODATA recommended value.
 
@@ -522,7 +522,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?kj90>.")
 
 (define-constant conventional-value-of-von-Klitzing-constant
     (25812.807L0 0 0)
-  "Conventional value of von klitzing constant.
+  "Conventional value of von Klitzing constant.
 
 2010 CODATA recommended value.
 
@@ -554,7 +554,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mud>.")
 
 (define-constant deuteron-magnetic-moment-to-Bohr-magneton-ratio
     (0.4669754556L-3 0.0000000039L-3 8.4L-9)
-  "Deuteron magnetic moment to bohr magneton ratio.
+  "Deuteron magnetic moment to Bohr magneton ratio.
 
 2010 CODATA recommended value.
 
@@ -586,7 +586,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mdc2>.")
 
 (define-constant deuteron-mass-energy-equivalent-in-MeV
     (1875.612859L0 0.000041L0 2.2L-8)
-  "Deuteron mass energy equivalent in mev.
+  "Deuteron mass energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -714,7 +714,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?ae>.")
 
 (define-constant electron-magnetic-moment-to-Bohr-magneton-ratio
     (-1.00115965218076L0 0.00000000000027L0 2.6L-13)
-  "Electron magnetic moment to bohr magneton ratio.
+  "Electron magnetic moment to Bohr magneton ratio.
 
 2010 CODATA recommended value.
 
@@ -746,7 +746,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mec2>.")
 
 (define-constant electron-mass-energy-equivalent-in-MeV
     (0.510998928L0 0.000000011L0 2.2L-8)
-  "Electron mass energy equivalent in mev.
+  "Electron mass energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -1018,7 +1018,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?hr>.")
 
 (define-constant Hartree-energy-in-eV
     (27.21138505L0 0.00000060L0 2.2L-8)
-  "Hartree energy in ev.
+  "Hartree energy in eV.
 
 2010 CODATA recommended value.
 
@@ -1098,7 +1098,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muh>.")
 
 (define-constant helion-magnetic-moment-to-Bohr-magneton-ratio
     (-1.158740958L-3 0.000000014L-3 1.2L-8)
-  "Helion magnetic moment to bohr magneton ratio.
+  "Helion magnetic moment to Bohr magneton ratio.
 
 2010 CODATA recommended value.
 
@@ -1130,7 +1130,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mhc2>.")
 
 (define-constant helion-mass-energy-equivalent-in-MeV
     (2808.391482L0 0.000062L0 2.2L-8)
-  "Helion mass energy equivalent in mev.
+  "Helion mass energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -1482,7 +1482,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?asil>.")
 
 (define-constant Loschmidt-constant-at-273.15K-and-100000Pa
     (2.6516462L25 0.0000024L25 9.1L-7)
-  "Loschmidt constant (273.15 k, 100000 pa).
+  "Loschmidt constant (273.15 K, 100000 Pa).
 
 2010 CODATA recommended value.
 
@@ -1490,7 +1490,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?n0>.")
 
 (define-constant Loschmidt-constant-at-273.15K-and-101325Pa
     (2.6867805L25 0.0000024L25 9.1L-7)
-  "Loschmidt constant (273.15 k, 101325 pa).
+  "Loschmidt constant (273.15 K, 101325 Pa).
 
 2010 CODATA recommended value.
 
@@ -1546,7 +1546,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mm12c>.")
 
 (define-constant molar-Planck-constant
     (3.9903127176L-10 0.0000000028L-10 7.0L-10)
-  "Molar planck constant.
+  "Molar Planck constant.
 
 2010 CODATA recommended value.
 
@@ -1554,7 +1554,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?nah>.")
 
 (define-constant molar-Planck-constant-times-c
     (0.119626565779L0 0.000000000084L0 7.0L-10)
-  "Molar planck constant times c.
+  "Molar Planck constant times c.
 
 2010 CODATA recommended value.
 
@@ -1562,7 +1562,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?nahc>.")
 
 (define-constant molar-volume-of-ideal-gas-at-273.15K-and-100000Pa
     (22.710953L-3 0.000021L-3 9.1L-7)
-  "Molar volume of ideal gas (273.15 k, 100000 pa).
+  "Molar volume of ideal gas (273.15 K, 100000 Pa).
 
 2010 CODATA recommended value.
 
@@ -1570,7 +1570,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mvol>.")
 
 (define-constant molar-volume-of-ideal-gas-at-273.15K-and-101325Pa
     (22.413968L-3 0.000020L-3 9.1L-7)
-  "Molar volume of ideal gas (273.15 k, 101325 pa).
+  "Molar volume of ideal gas (273.15 K, 101325 Pa).
 
 2010 CODATA recommended value.
 
@@ -1586,7 +1586,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mvolsil>.")
 
 (define-constant muon-Compton-wavelength
     (11.73444103L-15 0.00000030L-15 2.5L-8)
-  "Muon compton wavelength.
+  "Muon Compton wavelength.
 
 2010 CODATA recommended value.
 
@@ -1594,7 +1594,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mcomwl>.")
 
 (define-constant muon-Compton-wavelength-over-2-pi
     (1.867594294L-15 0.000000047L-15 2.5L-8)
-  "Muon compton wavelength over 2 pi.
+  "Muon Compton wavelength over 2 pi.
 
 2010 CODATA recommended value.
 
@@ -1626,7 +1626,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?amu>.")
 
 (define-constant muon-magnetic-moment-to-Bohr-magneton-ratio
     (-4.84197044L-3 0.00000012L-3 2.5L-8)
-  "Muon magnetic moment to bohr magneton ratio.
+  "Muon magnetic moment to Bohr magneton ratio.
 
 2010 CODATA recommended value.
 
@@ -1658,7 +1658,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmuc2>.")
 
 (define-constant muon-mass-energy-equivalent-in-MeV
     (105.6583715L0 0.0000035L0 3.4L-8)
-  "Muon mass energy equivalent in mev.
+  "Muon mass energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -1730,7 +1730,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?thbar>.")
 
 (define-constant natural-unit-of-action-in-eV-s
     (6.58211928L-16 0.00000015L-16 2.2L-8)
-  "Natural unit of action in ev s.
+  "Natural unit of action in eV s.
 
 2010 CODATA recommended value.
 
@@ -1746,7 +1746,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?tmec2>.")
 
 (define-constant natural-unit-of-energy-in-MeV
     (0.510998928L0 0.000000011L0 2.2L-8)
-  "Natural unit of energy in mev.
+  "Natural unit of energy in MeV.
 
 2010 CODATA recommended value.
 
@@ -1778,7 +1778,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mec>.")
 
 (define-constant natural-unit-of-momentum-in-MeV/c
     (0.510998928L0 0.000000011L0 2.2L-8)
-  "Natural unit of momentum in mev/c.
+  "Natural unit of momentum in MeV/c.
 
 2010 CODATA recommended value.
 
@@ -1802,7 +1802,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?tc>.")
 
 (define-constant neutron-Compton-wavelength
     (1.3195909068L-15 0.0000000011L-15 8.2L-10)
-  "Neutron compton wavelength.
+  "Neutron Compton wavelength.
 
 2010 CODATA recommended value.
 
@@ -1810,7 +1810,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?ncomwl>.")
 
 (define-constant neutron-Compton-wavelength-over-2-pi
     (0.21001941568L-15 0.00000000017L-15 8.2L-10)
-  "Neutron compton wavelength over 2 pi.
+  "Neutron Compton wavelength over 2 pi.
 
 2010 CODATA recommended value.
 
@@ -1850,7 +1850,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?munn>.")
 
 (define-constant neutron-magnetic-moment-to-Bohr-magneton-ratio
     (-1.04187563L-3 0.00000025L-3 2.4L-7)
-  "Neutron magnetic moment to bohr magneton ratio.
+  "Neutron magnetic moment to Bohr magneton ratio.
 
 2010 CODATA recommended value.
 
@@ -1882,7 +1882,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mnc2>.")
 
 (define-constant neutron-mass-energy-equivalent-in-MeV
     (939.565379L0 0.000021L0 2.2L-8)
-  "Neutron mass energy equivalent in mev.
+  "Neutron mass energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -1962,7 +1962,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mnmmpc2>.")
 
 (define-constant neutron-proton-mass-difference-energy-equivalent-in-MeV
     (1.29333217L0 0.00000042L0 3.3L-7)
-  "Neutron-proton mass difference energy equivalent in mev.
+  "Neutron-proton mass difference energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -2018,7 +2018,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mun>.")
 
 (define-constant nuclear-magneton-in-eV/T
     (3.1524512605L-8 0.0000000022L-8 7.1L-10)
-  "Nuclear magneton in ev/t.
+  "Nuclear magneton in eV/T.
 
 2010 CODATA recommended value.
 
@@ -2034,7 +2034,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?munshcminv>.")
 
 (define-constant nuclear-magneton-inK/T
     (3.6582682L-4 0.0000033L-4 9.1L-7)
-  "Nuclear magneton in k/t.
+  "Nuclear magneton in K/T.
 
 2010 CODATA recommended value.
 
@@ -2042,7 +2042,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?munskk>.")
 
 (define-constant nuclear-magneton-in-MHz/T
     (7.62259357L0 0.00000017L0 2.2L-8)
-  "Nuclear magneton in mhz/t.
+  "Nuclear magneton in MHz/T.
 
 2010 CODATA recommended value.
 
@@ -2058,7 +2058,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?h>.")
 
 (define-constant Planck-constant-in-eV-s
     (4.135667516L-15 0.000000091L-15 2.2L-8)
-  "Planck constant in ev s.
+  "Planck constant in eV s.
 
 2010 CODATA recommended value.
 
@@ -2074,7 +2074,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?hbar>.")
 
 (define-constant Planck-constant-over-2-pi-in-eV-s
     (6.58211928L-16 0.00000015L-16 2.2L-8)
-  "Planck constant over 2 pi in ev s.
+  "Planck constant over 2 pi in eV s.
 
 2010 CODATA recommended value.
 
@@ -2082,7 +2082,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?hbarev>.")
 
 (define-constant Planck-constant-over-2-pi-times-c-in-MeV-fm
     (197.3269718L0 0.0000044L0 2.2L-8)
-  "Planck constant over 2 pi times c in mev fm.
+  "Planck constant over 2 pi times c in MeV fm.
 
 2010 CODATA recommended value.
 
@@ -2106,7 +2106,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?plkm>.")
 
 (define-constant Planck-mass-energy-equivalent-in-GeV
     (1.220932L19 0.000073L19 6.0L-5)
-  "Planck mass energy equivalent in gev.
+  "Planck mass energy equivalent in GeV.
 
 2010 CODATA recommended value.
 
@@ -2138,7 +2138,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?esmp>.")
 
 (define-constant proton-Compton-wavelength
     (1.32140985623L-15 0.00000000094L-15 7.1L-10)
-  "Proton compton wavelength.
+  "Proton Compton wavelength.
 
 2010 CODATA recommended value.
 
@@ -2146,7 +2146,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?pcomwl>.")
 
 (define-constant proton-Compton-wavelength-over-2-pi
     (0.21030891047L-15 0.00000000015L-15 7.1L-10)
-  "Proton compton wavelength over 2 pi.
+  "Proton Compton wavelength over 2 pi.
 
 2010 CODATA recommended value.
 
@@ -2186,7 +2186,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mup>.")
 
 (define-constant proton-magnetic-moment-to-Bohr-magneton-ratio
     (1.521032210L-3 0.000000012L-3 8.1L-9)
-  "Proton magnetic moment to bohr magneton ratio.
+  "Proton magnetic moment to Bohr magneton ratio.
 
 2010 CODATA recommended value.
 
@@ -2226,7 +2226,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mpc2>.")
 
 (define-constant proton-mass-energy-equivalent-in-MeV
     (938.272046L0 0.000021L0 2.2L-8)
-  "Proton mass energy equivalent in mev.
+  "Proton mass energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -2322,7 +2322,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?ryd>.")
 
 (define-constant Rydberg-constant-times-c-in-Hz
     (3.289841960364L15 0.000000000017L15 5.0L-12)
-  "Rydberg constant times c in hz.
+  "Rydberg constant times c in Hz.
 
 2010 CODATA recommended value.
 
@@ -2330,7 +2330,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?rydchz>.")
 
 (define-constant Rydberg-constant-times-hc-in-eV
     (13.60569253L0 0.00000030L0 2.2L-8)
-  "Rydberg constant times hc in ev.
+  "Rydberg constant times hc in eV.
 
 2010 CODATA recommended value.
 
@@ -2338,7 +2338,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?rydhcev>.")
 
 (define-constant Rydberg-constant-times-hc-in-J
     (2.179872171L-18 0.000000096L-18 4.4L-8)
-  "Rydberg constant times hc in j.
+  "Rydberg constant times hc in J.
 
 2010 CODATA recommended value.
 
@@ -2346,7 +2346,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?rydhcj>.")
 
 (define-constant Sackur-Tetrode-constant-at-1K-and-100000Pa
     (-1.1517078L0 0.0000023L0 2.0L-6)
-  "Sackur-tetrode constant (1 k, 100000 pa).
+  "Sackur-Tetrode constant (1 K, 100000 Pa).
 
 2010 CODATA recommended value.
 
@@ -2354,7 +2354,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?s0sr>.")
 
 (define-constant Sackur-Tetrode-constant-at-1K-and-101325Pa
     (-1.1648708L0 0.0000023L0 1.9L-6)
-  "Sackur-tetrode constant (1 k, 101325 pa).
+  "Sackur-Tetrode constant (1 K, 101325 Pa).
 
 2010 CODATA recommended value.
 
@@ -2394,7 +2394,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?muhp>.")
 
 (define-constant shielded-helion-magnetic-moment-to-Bohr-magneton-ratio
     (-1.158671471L-3 0.000000014L-3 1.2L-8)
-  "Shielded helion magnetic moment to bohr magneton ratio.
+  "Shielded helion magnetic moment to Bohr magneton ratio.
 
 2010 CODATA recommended value.
 
@@ -2450,7 +2450,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mupp>.")
 
 (define-constant shielded-proton-magnetic-moment-to-Bohr-magneton-ratio
     (1.520993128L-3 0.000000017L-3 1.1L-8)
-  "Shielded proton magnetic moment to bohr magneton ratio.
+  "Shielded proton magnetic moment to Bohr magneton ratio.
 
 2010 CODATA recommended value.
 
@@ -2498,7 +2498,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?stdspr>.")
 
 (define-constant Stefan-Boltzmann-constant
     (5.670373L-8 0.000021L-8 3.6L-6)
-  "Stefan-boltzmann constant.
+  "Stefan-Boltzmann constant.
 
 2010 CODATA recommended value.
 
@@ -2506,7 +2506,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?sigma>.")
 
 (define-constant tau-Compton-wavelength
     (0.697787L-15 0.000063L-15 9.0L-5)
-  "Tau compton wavelength.
+  "Tau Compton wavelength.
 
 2010 CODATA recommended value.
 
@@ -2514,7 +2514,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?tcomwl>.")
 
 (define-constant tau-Compton-wavelength-over-2-pi
     (0.111056L-15 0.000010L-15 9.0L-5)
-  "Tau compton wavelength over 2 pi.
+  "Tau Compton wavelength over 2 pi.
 
 2010 CODATA recommended value.
 
@@ -2538,7 +2538,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtauc2>.")
 
 (define-constant tau-mass-energy-equivalent-in-MeV
     (1776.82L0 0.16L0 9.0L-5)
-  "Tau mass energy equivalent in mev.
+  "Tau mass energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -2618,7 +2618,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mut>.")
 
 (define-constant triton-magnetic-moment-to-Bohr-magneton-ratio
     (1.622393657L-3 0.000000021L-3 1.3L-8)
-  "Triton magnetic moment to bohr magneton ratio.
+  "Triton magnetic moment to Bohr magneton ratio.
 
 2010 CODATA recommended value.
 
@@ -2650,7 +2650,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mtc2>.")
 
 (define-constant triton-mass-energy-equivalent-in-MeV
     (2808.921005L0 0.000062L0 2.2L-8)
-  "Triton mass energy equivalent in mev.
+  "Triton mass energy equivalent in MeV.
 
 2010 CODATA recommended value.
 
@@ -2698,7 +2698,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?tukg>.")
 
 (define-constant von-Klitzing-constant
     (25812.8074434L0 0.0000084L0 3.2L-10)
-  "Von klitzing constant.
+  "Von Klitzing constant.
 
 2010 CODATA recommended value.
 
