@@ -62,12 +62,37 @@ for inline expansion by the compiler."
 (export 'define-constant)
 (defmacro define-constant (name (value abs-tol rel-tol) &optional doc)
   "Define a physical constant."
-  `(progn
-     (export (quote ,name))
-     (defconst ,name ,value
-       ,@(when doc (list doc)))
-     (defsubst ,name ()
-       ,@(when doc (list doc))
-       (values ,name ,abs-tol ,rel-tol))))
+  (let ((val (gensym "VAL"))
+	(str (gensym "STR"))
+	(num (gensym "NUM"))
+	(abs (gensym "ABS"))
+	(rel (gensym "REL"))
+	(tab (gensym "TAB")))
+    `(let* ((*read-default-float-format* 'long-float)
+	    ;; The value itself.
+	    (,val ,value)
+	    ;; String value.
+	    (,str (if (stringp ,val)
+		      ,val
+		    (nstring-upcase (write-to-string ,val))))
+	    ;; Numeric value.
+	    (,num (if (stringp ,val)
+		      (read-from-string ,val)
+		    ,val))
+	    ;; Standard uncertainty.
+	    (,abs (read-from-string ,abs-tol))
+	    ;; Relative standard uncertainty.
+	    (,rel (read-from-string ,rel-tol))
+	    ;; Hash table for string values.
+	    (,tab (symbol-value (find-symbol "*STRING-VALUE*"))))
+       (export (quote ,name))
+       (defvar ,name ,num
+	 ,@(when doc (list doc)))
+       (defsubst ,name ()
+	 ,@(when doc (list doc))
+	 (values ,name ,abs ,rel))
+       (when (not (null ,tab))
+	 (setf (gethash (quote ,name) ,tab) ,str))
+       (quote ,name))))
 
 ;;; codata-common.lisp ends here
