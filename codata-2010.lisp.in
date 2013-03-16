@@ -39,7 +39,8 @@
 (in-package :common-lisp-user)
 
 (defpackage :codata-recommended-values-2010
-  (:use :common-lisp :codata-recommended-values-common))
+  (:use :common-lisp :codata-recommended-values-common)
+  (:documentation "2010 CODATA recommended values."))
 
 (in-package :codata-recommended-values-2010)
 
