@@ -73,7 +73,10 @@
 	    (write-sequence page stream))
 	  page))))
 
-(defun get-values (page)
+(defparameter *exponent-char* #\L)
+(defparameter *force-exponent* t)
+
+(defun get-values (page &optional relax)
   "Extract values from HTML page.
 Return value is a list of strings."
   (let (point name value abs-tol rel-tol)
@@ -97,7 +100,9 @@ Return value is a list of strings."
       (setf rel-tol (match-string 1)
 	    point (match-end)))
     (when (and name value abs-tol rel-tol)
-      (mapcar #'wash-number (list value abs-tol rel-tol)))))
+      (let ((*exponent-char* (if relax #\E #\L))
+	    (*force-exponent* (not relax)))
+	(mapcar #'wash-number (list value abs-tol rel-tol))))))
 
 (defun wash-number (string)
   (if (string-match "\\(exact\\)" string)
@@ -106,13 +111,13 @@ Return value is a list of strings."
       (iter (while (string-match "\\s*\\&nbsp;\\s*" string))
 	    (setf string (replace-match "")))
       (when (string-match "x10" string)
-	(setf string (replace-match "L")))
+	(setf string (replace-match (list *exponent-char*))))
       (when (string-match "<sup>(.*?)</sup>" string)
 	(setf string (replace-match (match-string 1))))
       (when (string-match " " string)
 	(setf string (subseq string 0 (match-start))))
-      (when (and (position #\. string) (not (position #\L string)))
-	(setf string (concatenate 'string string "L0")))
+      (when (and *force-exponent* (position #\. string) (not (position *exponent-char* string)))
+	(setf string (concatenate 'string string (list *exponent-char* #\0))))
       string)))
 
 (defun wash-name (string)
@@ -191,16 +196,17 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
 	  (for page = (get-page key))
 	  (when (null page)
 	    (next-iteration))
-	  (for values = (get-values page))
+	  (for values = (get-values page t))
 	  (when (null values)
 	    (error "Should not happen!"))
-	  (for exact = (assoc key *exact* :test #'string=))
-	  (when (not (null exact))
-	    (setf (first values)
-		  (format nil "(with-early-bindings ~A)" (cdr exact))))
 	  (for symbol = (wash-name name))
-	  (format stream "(define-constant ~A~%    ~A~%  ~S)~2%"
-		  symbol values (doc-string key name values))))
+	  (format stream "(define-constant ~A~%    " symbol)
+	  (for exact = (assoc key *exact* :test #'string=))
+	  (if (null exact)
+	      (format stream "~S" values)
+	    (format stream "((with-early-bindings ~A) ~S ~S)"
+		    (cdr exact) (second values) (third values)))
+	  (format stream "~%  ~S)~2%" (doc-string key name values))))
   ;; Write output file.
   (when (string-match "#-\\(and\\) BODY\\s+" templ)
     (setf templ (replace-match body)))
