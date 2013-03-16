@@ -35,12 +35,22 @@
 (in-package :common-lisp-user)
 
 (defpackage :codata-recommended-values
-  (:use :common-lisp)
+  (:use :common-lisp :codata-recommended-values-common)
   (:documentation "CODATA recommended values of physical constants.
 
 See <http://physics.nist.gov/cuu/index.html>."))
 
 (in-package :codata-recommended-values)
+
+(export 'string-value)
+(defun string-value (symbol)
+  "Return the string representation of a recommended value.
+
+Argument SYMBOL is the symbol of a recommended value.
+
+Value is the string representation of the recommended value, or nil
+if SYMBOL is not a valid symbol of a recommended value."
+  (identity (gethash key *string-value*)))
 
 ;; Export latest values.
 (do-external-symbols (symbol (find-package :codata-recommended-values-2010))
