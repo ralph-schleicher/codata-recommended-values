@@ -39,6 +39,10 @@
 
 (in-package :codata-recommended-values-common)
 
+(export '*string-value*)
+(defvar *string-value* (make-hash-table :test 'eq)
+  "Cache for string representations.")
+
 (export 'defconst)
 (defmacro defconst (name value &optional doc)
   "Define a constant variable.
@@ -66,8 +70,7 @@ for inline expansion by the compiler."
 	(str (gensym "STR"))
 	(num (gensym "NUM"))
 	(abs (gensym "ABS"))
-	(rel (gensym "REL"))
-	(tab (gensym "TAB")))
+	(rel (gensym "REL")))
     `(let* ((*read-default-float-format* 'long-float)
 	    ;; The value itself.
 	    (,val ,value)
@@ -82,17 +85,14 @@ for inline expansion by the compiler."
 	    ;; Standard uncertainty.
 	    (,abs (read-from-string ,abs-tol))
 	    ;; Relative standard uncertainty.
-	    (,rel (read-from-string ,rel-tol))
-	    ;; Hash table for string values.
-	    (,tab (symbol-value (find-symbol "*STRING-VALUE*"))))
+	    (,rel (read-from-string ,rel-tol)))
        (export (quote ,name))
-       (defvar ,name ,num
+       (defconst ,name ,num
 	 ,@(when doc (list doc)))
        (defsubst ,name ()
 	 ,@(when doc (list doc))
 	 (values ,name ,abs ,rel))
-       (when (not (null ,tab))
-	 (setf (gethash (quote ,name) ,tab) ,str))
+       (setf (gethash (quote ,name) *string-value*) ,str)
        (quote ,name))))
 
 ;;; codata-common.lisp ends here
