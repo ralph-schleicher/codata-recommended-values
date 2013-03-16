@@ -39,22 +39,10 @@
 (in-package :common-lisp-user)
 
 (defpackage :codata-recommended-values-2010
-  (:use :common-lisp :codata-recommended-values-common))
+  (:use :common-lisp :codata-recommended-values-common)
+  (:documentation "2010 CODATA recommended values."))
 
 (in-package :codata-recommended-values-2010)
-
-(defvar *string-value* (make-hash-table :test 'eq)
-  "String representation of values.")
-
-(export 'string-value)
-(defun string-value (key)
-  "Return the string representation of a value.
-
-Argument KEY is the symbol of a value.
-
-Value is the string representation of the value, or nil
-if KEY is not a valid symbol of a value."
-  (identity (gethash key *string-value*)))
 
 (defmacro with-early-bindings (&body body)
   `(let (;; Speed of light in vacuum.
