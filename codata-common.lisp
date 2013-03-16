@@ -35,7 +35,10 @@
 (in-package :common-lisp-user)
 
 (defpackage :codata-recommended-values-common
-  (:use :common-lisp))
+  (:use :common-lisp)
+  (:documentation "Common definitions.
+
+Use at your own risk."))
 
 (in-package :codata-recommended-values-common)
 
