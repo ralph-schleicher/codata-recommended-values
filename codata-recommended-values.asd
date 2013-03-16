@@ -38,7 +38,7 @@
   :description "CODATA recommended values of physical constants."
   :author "Ralph Schleicher <rs@ralph-schleicher.de>"
   :license "Modified BSD License"
-  :version "20130316.0045"
+  :version "20130316.2355"
   :serial t
   :components ((:file "codata-common")
 	       (:file "codata-2010")
