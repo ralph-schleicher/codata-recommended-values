@@ -38,7 +38,10 @@
   (:use :common-lisp :codata-recommended-values-common)
   (:documentation "CODATA recommended values of physical constants.
 
-See <http://physics.nist.gov/cuu/index.html>."))
+See <http://physics.nist.gov/cuu/index.html>.
+
+This package also exports the symbols of the 2010 CODATA recommended
+values."))
 
 (in-package :codata-recommended-values)
 
