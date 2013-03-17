@@ -34,6 +34,7 @@
 
 (in-package :common-lisp-user)
 
+(ql:quickload "codata-recommended-values")
 (ql:quickload "cldoc")
 
 (in-package :cludg)
@@ -42,12 +43,41 @@
   (with-tag (:pre ())
     (html-write "~{~A~^~%~}" strings)))
 
+(defun make-param-summary (descs filter)
+  "Creates a summary table for defconstant, defparameter, defvar,
+and deftype descriptors if any."
+  (flet ((key (desc)
+	   ;; So that (make-symbol "1.23E-4") is printed as a number.
+	   (let ((*print-gensym* nil)
+		 (*print-readably* nil))
+	     (delete #\| (purge-lambda-list-for-html (value desc))))))
+    (mapc #'(lambda (title descs)
+	      (make-summary title descs filter :key #'key))
+	  '("Constants" "Parameters" "Variables" "Types")
+	  (list (find-descs 'defconstant-descriptor descs)
+		(find-descs 'defparameter-descriptor descs)
+		(find-descs 'defvar-descriptor descs)
+		(find-descs 'deftype-descriptor descs)))))
+
+(defmethod dformat ((desc defconstant-descriptor) (driver html) os)
+  (with-html-description
+      (:name (purge-string-for-html (name desc))
+       :type (html-printable-type desc)
+       :arg-list (let ((*print-gensym* nil)
+		       (*print-readably* nil))
+		   (delete #\| (purge-lambda-list-for-html (value desc))))
+       :anchor (lookup-meta-descriptor-anchor desc)
+       :divclass "defconstant")
+    (dformat-documentation desc driver os)))
+
 (define-descriptor-handler DEFINE-CONSTANT (form)
     "constant"
   (make-instance 'defconstant-descriptor
     :type (format nil "~S" (first form))
     :name (format nil "~S" (second form))
-    :value (list)
+    :value (list (make-symbol
+		  (codata-recommended-values:string-value
+		   (find-symbol (symbol-name (second form)) *current-package*))))
     :doc (fourth form)))
 
 (cldoc:extract-documentation
