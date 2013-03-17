@@ -40,6 +40,13 @@
 
 See <http://physics.nist.gov/cuu/index.html>.
 
+All CODATA recommended values are defined as a constant and as a
+function.  The function returns three values, the value of the
+constant, the standard uncertainty, and the relative standard
+uncertainty.  Floating-point numbers are of the type `long-float'.
+Please note that some of the constants have values which can not be
+represented as IEEE 754 single precision floating-point numbers.
+
 This package also exports the symbols of the 2010 CODATA recommended
 values."))
 
@@ -52,7 +59,9 @@ values."))
 Argument SYMBOL is the symbol of a recommended value.
 
 Value is the string representation of the recommended value, or nil
-if SYMBOL is not a valid symbol of a recommended value."
+if SYMBOL is not a valid symbol of a recommended value.
+
+The string representation uses the letter E as the exponent char."
   (identity (gethash symbol *string-value*)))
 
 ;; Export latest values.
