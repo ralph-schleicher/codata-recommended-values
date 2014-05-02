@@ -62,7 +62,7 @@ Value is the string representation of the recommended value, or nil
 if SYMBOL is not a valid symbol of a recommended value.
 
 The string representation uses the letter E as the exponent char."
-  (identity (gethash symbol *string-value*)))
+  (values (gethash symbol *string-value*)))
 
 ;; Export latest values.
 (do-external-symbols (symbol (find-package :codata-recommended-values-2010))
