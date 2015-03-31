@@ -44,18 +44,23 @@
 #-(and)
 (get-working-directory)
 
+(defparameter *cache-directory*
+  (ensure-directories-exist
+   (make-pathname :directory '(:relative "cache" "codata-2010")))
+  "Where to cache the HTML pages.")
+
+(defparameter *lib-directory*
+  (ensure-directories-exist
+   (make-pathname :directory '(:relative "lib" "codata-2010")))
+  "Where to save the final data files.")
+
 (defparameter *constants*
-  (with-open-file (stream "CONSTANTS" :direction :input)
+  (with-open-file (stream (make-pathname :name "CONSTANTS" :defaults *lib-directory*) :direction :input)
     (iter (for line = (read-line stream nil))
 	  (while line)
 	  (when (string-match "^\\s*(\\w+)\\s+(.+)$" line)
 	    (collect (cons (match-string 1) (match-string 2))))))
   "Alist of constants of the form (KEY . QUANTITY).")
-
-(defparameter *cache-directory*
-  (ensure-directories-exist
-   (make-pathname :directory '(:relative "cache" "codata-2010")))
-  "Where to cache the HTML pages.")
 
 (defun get-page (key)
   "Fetch HTML page for constant KEY."
