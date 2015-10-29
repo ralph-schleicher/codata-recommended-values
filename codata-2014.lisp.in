@@ -1,6 +1,6 @@
-;; codata-2010.lisp --- 2010 CODATA recommended values.
+;; codata-2014.lisp --- 2014 CODATA recommended values.
 
-;; Copyright (C) 2013 Ralph Schleicher
+;; Copyright (C) 2015 Ralph Schleicher
 
 ;; Redistribution and use in source and binary forms, with or without
 ;; modification, are permitted provided that the following conditions
@@ -39,12 +39,12 @@
 
 (in-package :common-lisp-user)
 
-(defpackage :codata-recommended-values-2010
+(defpackage :codata-recommended-values-2014
   (:use :common-lisp :codata-recommended-values-common)
-  (:documentation "2010 CODATA recommended values."))
+  (:documentation "2014 CODATA recommended values."))
 
-(in-package :codata-recommended-values-2010)
+(in-package :codata-recommended-values-2014)
 
 #-(and) BODY
 
-;; codata-2010.lisp ends here
+;; codata-2014.lisp ends here
