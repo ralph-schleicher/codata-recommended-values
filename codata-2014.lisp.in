@@ -1,6 +1,6 @@
 ;; codata-2014.lisp --- 2014 CODATA recommended values.
 
-;; Copyright (C) 2015 Ralph Schleicher
+;; Copyright (C) 2013 Ralph Schleicher
 
 ;; Redistribution and use in source and binary forms, with or without
 ;; modification, are permitted provided that the following conditions
