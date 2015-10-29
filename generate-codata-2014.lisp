@@ -1,4 +1,4 @@
-;; generate-codata-2010.lisp --- create codata-2010.lisp source file.
+;; generate-codata-2014.lisp --- create codata-2014.lisp source file.
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -47,12 +47,12 @@
 
 (defparameter *cache-directory*
   (ensure-directories-exist
-   (make-pathname :directory '(:relative "cache" "codata-2010")))
+   (make-pathname :directory '(:relative "cache" "codata-2014")))
   "Where to cache the HTML pages.")
 
 (defparameter *lib-directory*
   (ensure-directories-exist
-   (make-pathname :directory '(:relative "lib" "codata-2010")))
+   (make-pathname :directory '(:relative "lib" "codata-2014")))
   "Where to save the final data files.")
 
 (defparameter *constants*
@@ -183,7 +183,7 @@ Return value is a list of strings."
   (format nil "~
 ~A~A.
 
-2010 CODATA recommended value.
+2014 CODATA recommended value.
 
 See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
 	  (char-upcase (aref name 0)) (subseq name 1) key))
@@ -191,7 +191,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
 ;; Program entry point.
 (let (templ body)
   ;; Fetch template file.
-  (with-open-file (stream "codata-2010.lisp.in" :direction :input)
+  (with-open-file (stream "codata-2014.lisp.in" :direction :input)
     (setf templ (make-string (file-length stream)))
     (read-sequence templ stream))
   ;; Generate file contents.
@@ -216,8 +216,8 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
   ;; Write output file.
   (when (string-match "#-\\(and\\) BODY\\s+" templ)
     (setf templ (replace-match body)))
-  (with-open-file (stream "codata-2010.lisp" :direction :output :if-exists :supersede)
+  (with-open-file (stream "codata-2014.lisp" :direction :output :if-exists :supersede)
     (princ templ stream))
   t)
 
-;; generate-codata-2010.lisp ends here
+;; generate-codata-2014.lisp ends here
