@@ -1059,7 +1059,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?hrhz>.")
 See <http://physics.nist.gov/cgi-bin/cuu/Value?hrminv>.")
 
 (define-constant hartree-joule-relationship
-    ("4.359744650E-18" "0" "0")
+    ("4.359744650E-18" "0.000000054E-18" "1.2E-8")
   "Hartree-joule relationship.
 
 2014 CODATA recommended value.
