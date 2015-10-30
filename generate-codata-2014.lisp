@@ -179,6 +179,12 @@ Return value is a list of strings."
     ("mu0" . "mu"))
   "Alist of exact values of the form (KEY . FORM).")
 
+(defparameter *correct*
+  '(;; hartree-joule relationship
+    ("hrj" "4.359744650E-18" "0.000000054E-18" "1.2E-8"))
+  "Alist of correct values of the form (KEY . VALUES).
+Use this to overwrite erroneous values from the HTML page.")
+
 (defun doc-string (key name values)
   (format nil "~
 ~A~A.
@@ -205,6 +211,9 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
 	  (for values = (get-values page t))
 	  (when (null values)
 	    (error "Should not happen!"))
+	  (for correct = (assoc key *correct* :test #'string=))
+	  (when (not (null correct))
+	    (setf values (rest correct)))
 	  (for symbol = (wash-name name))
 	  (format stream "(define-constant ~A~%    " symbol)
 	  (for exact = (assoc key *exact* :test #'string=))
