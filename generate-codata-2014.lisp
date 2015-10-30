@@ -127,9 +127,9 @@ Return value is a list of strings."
       string)))
 
 (defun wash-name (string)
-  (when (string-match "(\\s+)K\\b" string)
+  (when (string-match "\\d(\\s+)K\\b" string)
     (setf string (replace-match "" 1)))
-  (when (string-match "(\\s+)Pa\\b" string)
+  (when (string-match "\\d(\\s+)Pa\\b" string)
     (setf string (replace-match "" 1)))
   (when (string-match " \\(" string)
     (setf string (replace-match " at ")))
