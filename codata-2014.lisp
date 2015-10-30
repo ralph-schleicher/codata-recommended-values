@@ -426,7 +426,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mubshhz>.")
 
 See <http://physics.nist.gov/cgi-bin/cuu/Value?mubshcminv>.")
 
-(define-constant Bohr-magneton-inK/T
+(define-constant Bohr-magneton-in-K/T
     ("0.67171405" "0.00000039" "5.7E-7")
   "Bohr magneton in K/T.
 
@@ -2034,7 +2034,7 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?munev>.")
 
 See <http://physics.nist.gov/cgi-bin/cuu/Value?munshcminv>.")
 
-(define-constant nuclear-magneton-inK/T
+(define-constant nuclear-magneton-in-K/T
     ("3.6582690E-4" "0.0000021E-4" "5.7E-7")
   "Nuclear magneton in K/T.
 
