@@ -179,9 +179,7 @@ Return value is a list of strings."
     ("mu0" . "mu"))
   "Alist of exact values of the form (KEY . FORM).")
 
-(defparameter *correct*
-  '(;; hartree-joule relationship
-    ("hrj" "4.359744650E-18" "0.000000054E-18" "1.2E-8"))
+(defparameter *correct* ()
   "Alist of correct values of the form (KEY . VALUES).
 Use this to overwrite erroneous values from the HTML page.")
 
