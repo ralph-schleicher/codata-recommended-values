@@ -1,4 +1,4 @@
-;; generate-codata-2014.lisp --- create codata-2014.lisp source file.
+;; generate-code.lisp --- create codata-RELEASE.lisp source file.
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -227,4 +227,4 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
     (princ templ stream))
   t)
 
-;; generate-codata-2014.lisp ends here
+;; generate-code.lisp ends here
