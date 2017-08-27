@@ -45,39 +45,36 @@
 #-(and)
 (get-working-directory)
 
-(defparameter *cache-directory*
-  (ensure-directories-exist
-   (make-pathname :directory '(:relative "cache" "codata-2014")))
+(defparameter *release* nil
+  "CODATA version number.")
+
+(defparameter *cache-directory* nil
   "Where to cache the HTML pages.")
 
-(defparameter *lib-directory*
-  (ensure-directories-exist
-   (make-pathname :directory '(:relative "lib" "codata-2014")))
+(defparameter *lib-directory* nil
   "Where to save the final data files.")
 
-(defparameter *constants*
-  (with-open-file (stream (make-pathname :name "CONSTANTS" :defaults *lib-directory*) :direction :input)
-    (iter (for line = (read-line stream nil))
-	  (while line)
-	  (when (string-match "^\\s*(\\w+)\\s+(.+)$" line)
-	    (collect (cons (match-string 1) (match-string 2))))))
+(defparameter *constants* ()
   "Alist of constants of the form (KEY . QUANTITY).")
 
 (defun get-page (key)
   "Fetch HTML page for constant KEY."
-  (let ((file-name (merge-pathnames (make-pathname :name key) *cache-directory*)))
-    (or (with-open-file (stream file-name :direction :input :if-does-not-exist nil)
-	  (when (not (null stream))
-	    (let ((page (make-string (file-length stream))))
-	      (read-sequence page stream)
-	      page)))
-	(let* ((base "http://physics.nist.gov/cgi-bin/cuu/Value")
-	       (page (drakma:http-request (concatenate 'string base "?" key))))
-	  (when (null page)
-	    (setf page ""))
-	  (with-open-file (stream file-name :direction :output :if-exists :supersede)
-	    (write-sequence page stream))
-	  page))))
+  (cond ((null *cache-directory*)
+	 (let ((file-name (merge-pathnames (make-pathname :name key) *lib-directory*)))
+	   (with-open-file (stream file-name :direction :input :if-does-not-exist :error)
+	     (read-file stream))))
+	(t
+	 (let ((file-name (merge-pathnames (make-pathname :name key) *cache-directory*)))
+	   (or (with-open-file (stream file-name :direction :input :if-does-not-exist nil)
+		 (when (not (null stream))
+		   (read-file stream)))
+	       (let* ((base "http://physics.nist.gov/cgi-bin/cuu/Value")
+		      (page (drakma:http-request (concatenate 'string base "?" key))))
+		 (when (null page)
+		   (setf page ""))
+		 (with-open-file (stream file-name :direction :output :if-exists :supersede)
+		   (write-sequence page stream)))
+	       page)))))
 
 (defparameter *exponent-char* #\L)
 (defparameter *force-exponent* t)
@@ -143,7 +140,7 @@ Return value is a list of strings."
     (setf string (replace-match "")))
   (substitute #\- #\Space string))
 
-(defparameter *with-early-bindings*
+(defun with-early-bindings ()
   (format nil "~
 \(defmacro with-early-bindings (&body body)
   `(let (;; Speed of light in vacuum.
@@ -187,44 +184,65 @@ Use this to overwrite erroneous values from the HTML page.")
   (format nil "~
 ~A~A.
 
-2014 CODATA recommended value.
+~A CODATA recommended value.
 
 See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
-	  (char-upcase (aref name 0)) (subseq name 1) key))
+	  (char-upcase (aref name 0)) (subseq name 1) *release* key))
 
 ;; Program entry point.
-(let (templ body)
-  ;; Fetch template file.
-  (with-open-file (stream "codata-2014.lisp.in" :direction :input)
-    (setf templ (make-string (file-length stream)))
-    (read-sequence templ stream))
-  ;; Generate file contents.
-  (setf body (make-array 0 :element-type 'character :fill-pointer 0 :adjustable t))
-  (with-output-to-string (stream body)
-    (format stream "~A~2%" *with-early-bindings*)
-    (iter (for (key . name) :in *constants*)
-	  (for page = (get-page key))
-	  (when (null page)
-	    (next-iteration))
-	  (for values = (get-values page t))
-	  (when (null values)
-	    (error "Should not happen!"))
-	  (for correct = (assoc key *correct* :test #'string=))
-	  (when (not (null correct))
-	    (setf values (rest correct)))
-	  (for symbol = (wash-name name))
-	  (format stream "(define-constant ~A~%    " symbol)
-	  (for exact = (assoc key *exact* :test #'string=))
-	  (if (null exact)
-	      (format stream "~S" values)
-	    (format stream "((with-early-bindings ~A) ~S ~S)"
-		    (cdr exact) (second values) (third values)))
-	  (format stream "~%  ~S)~2%" (doc-string key name values))))
-  ;; Write output file.
-  (when (string-match "#-\\(and\\) BODY\\s+" templ)
-    (setf templ (replace-match body)))
-  (with-open-file (stream "codata-2014.lisp" :direction :output :if-exists :supersede)
-    (princ templ stream))
-  t)
+(defun generate-code (release &key use-cache)
+  (let ((*release* release)
+	(*cache-directory* nil)
+	(*lib-directory* nil)
+	(*constants* nil))
+    (let ((subdir (format nil "codata-~A" *release*)))
+      (when use-cache
+	(setf *cache-directory* (make-pathname :directory (list :relative "cache" subdir)))
+	(ensure-directories-exist *cache-directory*))
+      (setf *lib-directory* (make-pathname :directory (list :relative "lib" subdir)))
+      (ensure-directories-exist *lib-directory*)
+      (let ((constants (make-pathname :name "CONSTANTS" :defaults *lib-directory*)))
+	(when (probe-file constants)
+	  (setf *constants* (with-open-file (stream constants :direction :input)
+			      (iter (for line = (read-line stream nil))
+				    (while line)
+				    (when (string-match "^\\s*(\\w+)\\s+(.+)$" line)
+				      (collect (cons (match-string 1) (match-string 2))))))))))
+    (generate-code-1)))
+
+(defun generate-code-1 ()
+  (let (templ body)
+    ;; Fetch template file.
+    (with-open-file (stream (format nil "codata-~A.lisp.in" *release*) :direction :input)
+      (setf templ (make-string (file-length stream)))
+      (read-sequence templ stream))
+    ;; Generate file contents.
+    (setf body (make-array 0 :element-type 'character :fill-pointer 0 :adjustable t))
+    (with-output-to-string (stream body)
+      (format stream "~A~2%" (with-early-bindings))
+      (iter (for (key . name) :in *constants*)
+	    (for page = (get-page key))
+	    (when (null page)
+	      (next-iteration))
+	    (for values = (get-values page t))
+	    (when (null values)
+	      (error "Should not happen!"))
+	    (for correct = (assoc key *correct* :test #'string=))
+	    (when (not (null correct))
+	      (setf values (rest correct)))
+	    (for symbol = (wash-name name))
+	    (format stream "(define-constant ~A~%    " symbol)
+	    (for exact = (assoc key *exact* :test #'string=))
+	    (if (null exact)
+		(format stream "~S" values)
+	      (format stream "((with-early-bindings ~A) ~S ~S)"
+		      (cdr exact) (second values) (third values)))
+	    (format stream "~%  ~S)~2%" (doc-string key name values))))
+    ;; Write output file.
+    (when (string-match "#-\\(and\\) BODY\\s+" templ)
+      (setf templ (replace-match body)))
+    (with-open-file (stream (format nil "codata-~A.lisp" *release*) :direction :output :if-exists :supersede)
+      (princ templ stream))
+    t))
 
 ;; generate-code.lisp ends here
