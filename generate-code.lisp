@@ -156,7 +156,7 @@ Return value is a list of strings."
      ,@body))"
 	  (first (get-values (get-page "c")))
 	  (first (get-values (get-page "e")))
-	  (first (get-values (get-page "tbohrrada0")))
+	  (first (get-values (get-page (if (< *release* 2018) "tbohrrada0" "Abohrrada0"))))
 	  (first (get-values (get-page "hr")))))
 
 (defparameter *exact*
