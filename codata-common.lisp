@@ -99,4 +99,13 @@ for inline expansion by the compiler."
        (setf (gethash (quote ,name) *string-value*) ,str)
        (quote ,name))))
 
+(export 'newton)
+(defun newton (f/df xo)
+  "Newton's method."
+  (let ((x 0))
+    (loop (setf x (- xo (funcall f/df xo)))
+	  (when (= x xo)
+	    (return x))
+	  (setf xo x))))
+
 ;;; codata-common.lisp ends here
