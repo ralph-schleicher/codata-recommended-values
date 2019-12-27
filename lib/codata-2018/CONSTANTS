@@ -13,6 +13,10 @@
 #    * 2nd --> second
 #    * 100 kPa --> 100000 Pa
 #    * 101.325 kPa --> 101325 Pa
+#    * Copper --> copper
+#    * Molybdenum --> molybdenum
+#    * Cs --> caesium
+#    * Si --> silicon
 #
 # Remove "am" key, it's a duplicate of the "amu" key.
 
@@ -69,6 +73,7 @@ k               Boltzmann constant
 kev             Boltzmann constant in eV/K
 kshhz           Boltzmann constant in Hz/K
 kshcminv        Boltzmann constant in inverse meter per kelvin
+z0              characteristic impedance of vacuum
 re              classical electron radius
 ecomwl          Compton wavelength
 conqu2e2sh      conductance quantum
@@ -81,7 +86,7 @@ ohm90           conventional value of ohm-90
 volt90          conventional value of volt-90
 rk90            conventional value of von Klitzing constant
 power90         conventional value of watt-90
-xucukalph1      Cu x unit
+xucukalph1      copper x unit
 gdn             deuteron g factor
 mud             deuteron magnetic moment
 mudsmub         deuteron magnetic moment to Bohr magneton ratio
@@ -170,7 +175,7 @@ hzminv          hertz-inverse meter relationship
 hzj             hertz-joule relationship
 hzk             hertz-kelvin relationship
 hzkg            hertz-kilogram relationship
-nucs            hyperfine transition frequency of Cs-133
+nucs            hyperfine transition frequency of caesium-133
 alphinv         inverse fine-structure constant
 minvu           inverse meter-atomic mass unit relationship
 minvev          inverse meter-electron volt relationship
@@ -203,12 +208,11 @@ kgminv          kilogram-inverse meter relationship
 kgj             kilogram-joule relationship
 kgk             kilogram-kelvin relationship
 asil            lattice parameter of silicon
-d220sil         lattice spacing of ideal Si (220)
+d220sil         lattice spacing of ideal silicon (220)
 n0              Loschmidt constant (273.15 K, 100000 Pa)
 n0std           Loschmidt constant (273.15 K, 101325 Pa)
 kcd             luminous efficacy
 flxquhs2e       magnetic flux quantum
-xumokalph1      Mo x unit
 r               molar gas constant
 mu              molar mass constant
 mm12c           molar mass of carbon-12
@@ -216,6 +220,7 @@ nah             molar Planck constant
 mvol            molar volume of ideal gas (273.15 K, 100000 Pa)
 mvolstd         molar volume of ideal gas (273.15 K, 101325 Pa)
 mvolsil         molar volume of silicon
+xumokalph1      molybdenum x unit
 mcomwl          muon Compton wavelength
 gmum            muon g factor
 mumum           muon magnetic moment
