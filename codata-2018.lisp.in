@@ -1,4 +1,4 @@
-;; codata-2018.lisp --- 2018 CODATA recommended values.
+;;; codata-2018.lisp --- 2018 CODATA recommended values.
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -47,4 +47,34 @@
 
 #-(and) BODY
 
-;; codata-2018.lisp ends here
+;;;; Backward Compatibility
+
+(export '220-lattice-spacing-of-silicon)
+(define-symbol-macro 220-lattice-spacing-of-silicon
+  lattice-spacing-of-ideal-silicon-at-220)
+
+(export 'bohr-magneton-in-inverse-meters-per-tesla)
+(define-symbol-macro bohr-magneton-in-inverse-meters-per-tesla
+  bohr-magneton-in-inverse-meter-per-tesla)
+
+(export 'boltzmann-constant-in-inverse-meters-per-kelvin)
+(define-symbol-macro boltzmann-constant-in-inverse-meters-per-kelvin
+  boltzmann-constant-in-inverse-meter-per-kelvin)
+
+(export 'cu-x-unit)
+(define-symbol-macro cu-x-unit
+  copper-x-unit)
+
+(export 'mo-x-unit)
+(define-symbol-macro mo-x-unit
+  molybdenum-x-unit)
+
+(export 'electric-constant)
+(define-symbol-macro electric-constant
+  vacuum-electric-permittivity)
+
+(export 'magnetic-constant)
+(define-symbol-macro magnetic-constant
+  vacuum-magnetic-permeability)
+
+;;; codata-2018.lisp ends here
