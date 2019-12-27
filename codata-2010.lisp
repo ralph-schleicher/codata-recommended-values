@@ -1,4 +1,4 @@
-;; codata-2010.lisp --- 2010 CODATA recommended values.
+;;; codata-2010.lisp --- 2010 CODATA recommended values.
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -2738,4 +2738,4 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?bwien>.")
 
 See <http://physics.nist.gov/cgi-bin/cuu/Value?d220sil>.")
 
-;; codata-2010.lisp ends here
+;;; codata-2010.lisp ends here

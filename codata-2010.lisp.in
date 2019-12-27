@@ -1,4 +1,4 @@
-;; codata-2010.lisp --- 2010 CODATA recommended values.
+;;; codata-2010.lisp --- 2010 CODATA recommended values.
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -47,4 +47,4 @@
 
 #-(and) BODY
 
-;; codata-2010.lisp ends here
+;;; codata-2010.lisp ends here
