@@ -36,60 +36,27 @@
 (in-package :common-lisp-user)
 
 (ql:quickload "codata-recommended-values")
-(ql:quickload "cldoc")
+(ql:quickload "rs-doc") ;private
 
-(in-package :cludg)
+(rs-doc:generate-doc
+ :package :codata-recommended-values
+ :symbols '(codata-recommended-values:string-value)
+ :output-format :html
+ :output #P"doc/codata-recommended-values.html")
 
-(defun codata-format-doc (symbol-descriptor driver strings)
-  (with-tag (:pre ())
-    (html-write "~{~A~^~%~}" strings)))
+(rs-doc:generate-doc
+ :package :codata-recommended-values-2010
+ :output-format :html
+ :output #P"doc/codata-recommended-values-2010.html")
 
-(defun make-param-summary (descs filter)
-  "Creates a summary table for defconstant, defparameter, defvar,
-and deftype descriptors if any."
-  (flet ((key (desc)
-	   ;; So that (make-symbol "1.23E-4") is printed as a number.
-	   (let ((*print-gensym* nil)
-		 (*print-readably* nil))
-	     (delete #\| (purge-lambda-list-for-html (value desc))))))
-    (mapc #'(lambda (title descs)
-	      (make-summary title descs filter :key #'key))
-	  '("Constants" "Parameters" "Variables" "Types")
-	  (list (find-descs 'defconstant-descriptor descs)
-		(find-descs 'defparameter-descriptor descs)
-		(find-descs 'defvar-descriptor descs)
-		(find-descs 'deftype-descriptor descs)))))
+(rs-doc:generate-doc
+ :package :codata-recommended-values-2014
+ :output-format :html
+ :output #P"doc/codata-recommended-values-2014.html")
 
-(defmethod dformat ((desc defconstant-descriptor) (driver html) os)
-  (with-html-description
-      (:name (purge-string-for-html (name desc))
-       :type (html-printable-type desc)
-       :arg-list (let ((*print-gensym* nil)
-		       (*print-readably* nil))
-		   (delete #\| (purge-lambda-list-for-html (value desc))))
-       :anchor (lookup-meta-descriptor-anchor desc)
-       :divclass "defconstant")
-    (dformat-documentation desc driver os)))
-
-(define-descriptor-handler DEFINE-CONSTANT (form)
-    "constant"
-  (make-instance 'defconstant-descriptor
-    :type (format nil "~S" (first form))
-    :name (format nil "~S" (second form))
-    :value (list (make-symbol
-		  (codata-recommended-values:string-value
-		   (find-symbol (symbol-name (second form)) *current-package*))))
-    :doc (fourth form)))
-
-(cldoc:extract-documentation
- 'cldoc:html "doc/html"
- (asdf:find-system :codata-recommended-values)
- :table-of-contents-title "CODATA Recommended Values of Physical Constants"
- :css-pathname (make-pathname :name "cldoc" :type "css" :directory '(:relative "doc"))
- :copy-css-into-output-dir t
- :charset "UTF-8"
- :doc-formater #'codata-format-doc
- :filter #'default-filter
- :sort-predicate (constantly nil))
+(rs-doc:generate-doc
+ :package :codata-recommended-values-2018
+ :output-format :html
+ :output #P"doc/codata-recommended-values-2018.html")
 
 ;;; generate-doc.lisp ends here
