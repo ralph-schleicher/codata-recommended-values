@@ -44,7 +44,7 @@ See <http://physics.nist.gov/cuu/index.html>.
 All CODATA recommended values are defined as a constant and as a
 function.  The function returns three values, the value of the
 constant, the standard uncertainty, and the relative standard
-uncertainty.  Floating-point numbers are of the type `long-float'.
+uncertainty.  Floating-point numbers are of the type ‘long-float’.
 Please note that some of the constants have values which can not be
 represented as IEEE 754 single precision floating-point numbers.
 
