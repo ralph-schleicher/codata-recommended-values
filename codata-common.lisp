@@ -94,7 +94,11 @@ for inline expansion by the compiler."
        (defconst ,name ,num
 	 ,@(when doc (list doc)))
        (defsubst ,name ()
-	 ,@(when doc (list doc))
+	 ,@(when doc (list (concatenate 'string doc "
+
+Primary value is the value of the constant, secondary value is the
+standard uncertainty, and tertiary value is the relative standard
+uncertainty.")))
 	 (values ,name ,abs ,rel))
        (setf (gethash (quote ,name) *string-value*) ,str)
        (quote ,name))))
