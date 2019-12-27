@@ -1,4 +1,4 @@
-;; generate-code.lisp --- create codata-RELEASE.lisp source file.
+;;; generate-code.lisp --- create codata-RELEASE.lisp source file.
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -56,6 +56,16 @@
 
 (defparameter *constants* ()
   "Alist of constants of the form (KEY . QUANTITY).")
+
+(defun initialize-constants ()
+  "Initialize ‘*constants*’ parameter."
+  (let ((constants (make-pathname :name "CONSTANTS" :defaults *lib-directory*)))
+    (when (probe-file constants)
+      (setf *constants* (with-open-file (stream constants :direction :input)
+			  (iter (for line = (read-line stream nil))
+				(while line)
+				(when (string-match "^\\s*(\\w+)\\s+(.+)$" line)
+				  (collect (cons (match-string 1) (match-string 2))))))))))
 
 (defun get-page (key)
   "Fetch HTML page for constant KEY."
@@ -141,7 +151,8 @@ Return value is a list of strings."
   (substitute #\- #\Space string))
 
 (defun with-early-bindings ()
-  (format nil "~
+  (if (< *release* 2018)
+      (format nil "~
 \(defmacro with-early-bindings (&body body)
   `(let (;; Speed of light in vacuum.
 	 (c ~A)
@@ -154,10 +165,23 @@ Return value is a list of strings."
 	 ;; Hartree energy.
 	 (Eh ~A))
      ,@body))"
-	  (first (get-values (get-page "c")))
-	  (first (get-values (get-page "e")))
-	  (first (get-values (get-page (if (< *release* 2018) "tbohrrada0" "Abohrrada0"))))
-	  (first (get-values (get-page "hr")))))
+	      (first (get-values (get-page "c")))
+	      (first (get-values (get-page "e")))
+	      (first (get-values (get-page "tbohrrada0")))
+	      (first (get-values (get-page "hr"))))
+    (format nil "~
+\(defmacro with-early-bindings (&body body)
+  `(let (;; Speed of light in vacuum.
+	 (c 299792458)
+         ;; Planck constant.
+	 (h 6.62607015L-34)
+	 ;; Elementary charge.
+	 (e 1.602176634L-19)
+         ;; Boltzmann constant.
+	 (k 1.380649L-23)
+         ;; Avogadro constant.
+	 (na 6.02214076L+23))
+     ,@body))")))
 
 (defparameter *exact*
   '(;; atomic unit of permittivity
@@ -200,14 +224,8 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
 	(setf *cache-directory* (make-pathname :directory (list :relative "cache" subdir)))
 	(ensure-directories-exist *cache-directory*))
       (setf *lib-directory* (make-pathname :directory (list :relative "lib" subdir)))
-      (ensure-directories-exist *lib-directory*)
-      (let ((constants (make-pathname :name "CONSTANTS" :defaults *lib-directory*)))
-	(when (probe-file constants)
-	  (setf *constants* (with-open-file (stream constants :direction :input)
-			      (iter (for line = (read-line stream nil))
-				    (while line)
-				    (when (string-match "^\\s*(\\w+)\\s+(.+)$" line)
-				      (collect (cons (match-string 1) (match-string 2))))))))))
+      (ensure-directories-exist *lib-directory*))
+    (initialize-constants)
     (generate-code-1)))
 
 (defun generate-code-1 ()
@@ -235,8 +253,10 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
 	    (for exact = (assoc key *exact* :test #'string=))
 	    (if (null exact)
 		(format stream "~S" values)
-	      (format stream "((with-early-bindings ~A) ~S ~S)"
-		      (cdr exact) (second values) (third values)))
+	      (let ((*print-case* :downcase)
+		    (*print-right-margin* 132))
+		(format stream "((with-early-bindings ~S) ~S ~S)"
+			(cdr exact) (second values) (third values))))
 	    (format stream "~%  ~S)~2%" (doc-string key name values))))
     ;; Write output file.
     (when (string-match "#-\\(and\\) BODY\\s+" templ)
@@ -245,4 +265,4 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
       (princ templ stream))
     t))
 
-;; generate-code.lisp ends here
+;;; generate-code.lisp ends here
