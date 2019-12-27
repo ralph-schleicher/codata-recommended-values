@@ -41,7 +41,7 @@ Variables</th>
 </tr>
 <tr class="table-row-color">
 <td class="summary-name">
-<a href="codata-common.html#_g5465">
+<a href="codata-common.html#_g645">
 *string-value*</a>
 </td>
 <td class="summary">
@@ -51,11 +51,25 @@ Variables</th>
 <table class="summary-table">
 <tr class="table-heading-color">
 <th class="summary" colspan="2">
+Functions</th>
+</tr>
+<tr class="table-row-color">
+<td class="summary-name">
+<a href="codata-common.html#_g649">
+newton</a>
+</td>
+<td class="summary">
+f/df xo</td>
+</tr>
+</table>
+<table class="summary-table">
+<tr class="table-heading-color">
+<th class="summary" colspan="2">
 Macros</th>
 </tr>
 <tr class="table-row-color">
 <td class="summary-name">
-<a href="codata-common.html#_g5466">
+<a href="codata-common.html#_g646">
 defconst</a>
 </td>
 <td class="summary">
@@ -63,7 +77,7 @@ name value <em>&amp;optional</em> doc</td>
 </tr>
 <tr class="table-row-color">
 <td class="summary-name">
-<a href="codata-common.html#_g5468">
+<a href="codata-common.html#_g648">
 define-constant</a>
 </td>
 <td class="summary">
@@ -71,7 +85,7 @@ name (value abs-tol rel-tol) <em>&amp;optional</em> doc</td>
 </tr>
 <tr class="table-row-color">
 <td class="summary-name">
-<a href="codata-common.html#_g5467">
+<a href="codata-common.html#_g647">
 defsubst</a>
 </td>
 <td class="summary">
@@ -80,7 +94,7 @@ name arg-list <em>&amp;body</em> body</td>
 </table>
 <div class="defpackage">
 <div class="defunsignatures">
-<a id="_g5464">
+<a id="_g644">
 </a>
 <table cellpadding="0" cellspacing="0" width="100%">
 <colgroup span="3">
@@ -109,7 +123,7 @@ Use at your own risk.</pre>
 </div>
 <div class="defparam">
 <div class="defunsignatures">
-<a id="_g5465">
+<a id="_g645">
 </a>
 <table cellpadding="0" cellspacing="0" width="100%">
 <colgroup span="3">
@@ -136,7 +150,7 @@ Cache for string representations.</pre>
 </div>
 <div class="defun">
 <div class="defunsignatures">
-<a id="_g5466">
+<a id="_g646">
 </a>
 <table cellpadding="0" cellspacing="0" width="100%">
 <colgroup span="3">
@@ -160,13 +174,13 @@ name value <em>&amp;optional</em> doc</td>
 <pre>
 Define a constant variable.
 
-This is like `defconstant' except that the initially set value
-is reused when the `defconst' form is evaluated again.</pre>
+This is like ‘defconstant’ except that the initially set value
+is reused when the ‘defconst’ form is evaluated again.</pre>
 </div>
 </div>
 <div class="defun">
 <div class="defunsignatures">
-<a id="_g5467">
+<a id="_g647">
 </a>
 <table cellpadding="0" cellspacing="0" width="100%">
 <colgroup span="3">
@@ -190,13 +204,13 @@ name arg-list <em>&amp;body</em> body</td>
 <pre>
 Define an inline function.
 
-This is like `defun' except that the function is globally marked
+This is like ‘defun’ except that the function is globally marked
 for inline expansion by the compiler.</pre>
 </div>
 </div>
 <div class="defun">
 <div class="defunsignatures">
-<a id="_g5468">
+<a id="_g648">
 </a>
 <table cellpadding="0" cellspacing="0" width="100%">
 <colgroup span="3">
@@ -219,6 +233,33 @@ name (value abs-tol rel-tol) <em>&amp;optional</em> doc</td>
 <div class="doc-body">
 <pre>
 Define a physical constant.</pre>
+</div>
+</div>
+<div class="defun">
+<div class="defunsignatures">
+<a id="_g649">
+</a>
+<table cellpadding="0" cellspacing="0" width="100%">
+<colgroup span="3">
+<col width="0*"/>
+<col width="1*"/>
+<col width="0*"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="symbol-name">
+newton&nbsp;</td>
+<td class="lambda-list">
+f/df xo</td>
+<td class="symbol-type">
+&nbsp;[Function]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="doc-body">
+<pre>
+Newton's method.</pre>
 </div>
 </div>
 </div>
