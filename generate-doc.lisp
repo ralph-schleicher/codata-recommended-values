@@ -1,4 +1,4 @@
-;; generate-doc.lisp --- generate documentation.
+;;; generate-doc.lisp --- generate documentation.
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -92,4 +92,4 @@ and deftype descriptors if any."
  :filter #'default-filter
  :sort-predicate (constantly nil))
 
-;; generate-doc.lisp ends here
+;;; generate-doc.lisp ends here
