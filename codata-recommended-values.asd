@@ -1,4 +1,4 @@
-;;; codata-recommended-values.asd --- ASDF system definition.
+;;; codata-recommended-values.asd --- ASDF system definitions
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -33,25 +33,18 @@
 
 ;;; Code:
 
-(in-package :common-lisp-user)
+(in-package :asdf-user)
 
-(asdf:defsystem :codata-recommended-values
+(defsystem "codata-recommended-values"
   :description "CODATA recommended values of physical constants."
   :author "Ralph Schleicher <rs@ralph-schleicher.de>"
   :license "Modified BSD License"
-  :version "20191227.2113"
+  :version (:read-file-line "VERSION")
   :serial t
   :components ((:file "codata-common")
-	       (:file "codata-2010")
-	       (:file "codata-2014")
-	       (:file "codata-2018")
-	       (:file "codata")))
-
-;; local variables:
-;; time-stamp-time-zone: "UTC"
-;; time-stamp-format: "%:y%02m%02d.%02H%02M"
-;; time-stamp-start: ":version\\s-+\""
-;; time-stamp-end: "\""
-;; end:
+               (:file "codata-2010")
+               (:file "codata-2014")
+               (:file "codata-2018")
+               (:file "codata")))
 
 ;;; codata-recommended-values.asd ends here
