@@ -1,4 +1,4 @@
-;;; generate-codata-2010.lisp --- create codata-2010.lisp source file.
+;;; generate-codata-2010.lisp --- create codata-2010.lisp source file
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -36,7 +36,7 @@
 (in-package :common-lisp-user)
 
 (let ((*correct* '(;; hartree-joule relationship
-		   ("hrj" "4.35974434E-18" "0.00000019E-18" "4.4E-8"))))
+                   ("hrj" "4.35974434E-18" "0.00000019E-18" "4.4E-8"))))
   (generate-code 2010))
 
 ;;; generate-codata-2010.lisp ends here

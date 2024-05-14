@@ -1,4 +1,4 @@
-;;; generate-codata-2014.lisp --- create codata-2014.lisp source file.
+;;; generate-codata-2014.lisp --- create codata-2014.lisp source file
 
 ;; Copyright (C) 2013 Ralph Schleicher
 

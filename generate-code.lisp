@@ -1,4 +1,4 @@
-;;; generate-code.lisp --- create codata-RELEASE.lisp source file.
+;;; generate-code.lisp --- create codata-RELEASE.lisp source file
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -36,7 +36,7 @@
 (in-package :common-lisp-user)
 
 (ql:quickload "iterate")
-(ql:quickload "rs-cll") ; private
+(ql:quickload "rs-cll") ;private
 (ql:quickload "drakma")
 
 (use-package :iterate)
@@ -62,29 +62,29 @@
   (let ((constants (make-pathname :name "CONSTANTS" :defaults *lib-directory*)))
     (when (probe-file constants)
       (setf *constants* (with-open-file (stream constants :direction :input)
-			  (iter (for line = (read-line stream nil))
-				(while line)
-				(when (string-match "^\\s*(\\w+)\\s+(.+)$" line)
-				  (collect (cons (match-string 1) (match-string 2))))))))))
+                          (iter (for line = (read-line stream nil))
+                                (while line)
+                                (when (string-match "^\\s*(\\w+)\\s+(.+)$" line)
+                                  (collect (cons (match-string 1) (match-string 2))))))))))
 
 (defun get-page (key)
   "Fetch HTML page for constant KEY."
   (cond ((null *cache-directory*)
-	 (let ((file-name (merge-pathnames (make-pathname :name key) *lib-directory*)))
-	   (with-open-file (stream file-name :direction :input :if-does-not-exist :error)
-	     (read-file stream))))
-	(t
-	 (let ((file-name (merge-pathnames (make-pathname :name key) *cache-directory*)))
-	   (or (with-open-file (stream file-name :direction :input :if-does-not-exist nil)
-		 (when (not (null stream))
-		   (read-file stream)))
-	       (let* ((base "http://physics.nist.gov/cgi-bin/cuu/Value")
-		      (page (drakma:http-request (concatenate 'string base "?" key))))
-		 (when (null page)
-		   (setf page ""))
-		 (with-open-file (stream file-name :direction :output :if-exists :supersede)
-		   (write-sequence page stream)))
-	       page)))))
+         (let ((file-name (merge-pathnames (make-pathname :name key) *lib-directory*)))
+           (with-open-file (stream file-name :direction :input :if-does-not-exist :error)
+             (read-file stream))))
+        (t
+         (let ((file-name (merge-pathnames (make-pathname :name key) *cache-directory*)))
+           (or (with-open-file (stream file-name :direction :input :if-does-not-exist nil)
+                 (when (not (null stream))
+                   (read-file stream)))
+               (let* ((base "http://physics.nist.gov/cgi-bin/cuu/Value")
+                      (page (drakma:http-request (concatenate 'string base "?" key))))
+                 (when (null page)
+                   (setf page ""))
+                 (with-open-file (stream file-name :direction :output :if-exists :supersede)
+                   (write-sequence page stream)))
+               page)))))
 
 (defparameter *exponent-char* #\L)
 (defparameter *force-exponent* t)
@@ -94,43 +94,43 @@
 Return value is a list of strings."
   (let (point name value abs-tol rel-tol)
     (when (and (string-match "bgcolor=\"#d0f0c8\"" page)
-	       (string-match "<b>\\s*(.*?)\\s*</b>" page :start (match-end)))
+               (string-match "<b>\\s*(.*?)\\s*</b>" page :start (match-end)))
       (setf name (match-string 1)
-	    point (match-end)))
+            point (match-end)))
     ;; Value.
     (when (and (string-match "bgcolor=\"#cce2f3\"" page :start point)
-	       (string-match "<b>\\s*(.*?)\\s*</b>" page :start (match-end)))
+               (string-match "<b>\\s*(.*?)\\s*</b>" page :start (match-end)))
       (setf value (match-string 1)
-	    point (match-end)))
+            point (match-end)))
     ;; Standard uncertainty.
     (when (and (string-match "bgcolor=\"#cce2f3\"" page :start point)
-	       (string-match "<b>\\s*(.*?)\\s*</b>" page :start (match-end)))
+               (string-match "<b>\\s*(.*?)\\s*</b>" page :start (match-end)))
       (setf abs-tol (match-string 1)
-	    point (match-end)))
+            point (match-end)))
     ;; Relative standard uncertainty.
     (when (and (string-match "bgcolor=\"#cce2f3\"" page :start point)
-	       (string-match "<b>\\s*(.*?)\\s*</b>" page :start (match-end)))
+               (string-match "<b>\\s*(.*?)\\s*</b>" page :start (match-end)))
       (setf rel-tol (match-string 1)
-	    point (match-end)))
+            point (match-end)))
     (when (and name value abs-tol rel-tol)
       (let ((*exponent-char* (if relax #\E #\L))
-	    (*force-exponent* (not relax)))
-	(mapcar #'wash-number (list value abs-tol rel-tol))))))
+            (*force-exponent* (not relax)))
+        (mapcar #'wash-number (list value abs-tol rel-tol))))))
 
 (defun wash-number (string)
   (if (string-match "\\(exact\\)" string)
       "0"
     (progn
       (iter (while (string-match "\\s*\\&nbsp;\\s*" string))
-	    (setf string (replace-match "")))
+            (setf string (replace-match "")))
       (when (string-match "x10" string)
-	(setf string (replace-match (list *exponent-char*))))
+        (setf string (replace-match (list *exponent-char*))))
       (when (string-match "<sup>(.*?)</sup>" string)
-	(setf string (replace-match (match-string 1))))
+        (setf string (replace-match (match-string 1))))
       (when (string-match " " string)
-	(setf string (subseq string 0 (match-start))))
+        (setf string (subseq string 0 (match-start))))
       (when (and *force-exponent* (position #\. string) (not (position *exponent-char* string)))
-	(setf string (concatenate 'string string (list *exponent-char* #\0))))
+        (setf string (concatenate 'string string (list *exponent-char* #\0))))
       string)))
 
 (defun wash-name (string)
@@ -155,32 +155,32 @@ Return value is a list of strings."
       (format nil "~
 \(defmacro with-early-bindings (&body body)
   `(let (;; Speed of light in vacuum.
-	 (c ~A)
-	 ;; Magnetic constant.
-	 (mu (* 4 pi 1L-7))
-	 ;; Elementary charge.
-	 (e ~A)
-	 ;; Atomic unit of length.
-	 (a ~A)
-	 ;; Hartree energy.
-	 (Eh ~A))
+         (c ~A)
+         ;; Magnetic constant.
+         (mu (* 4 pi 1L-7))
+         ;; Elementary charge.
+         (e ~A)
+         ;; Atomic unit of length.
+         (a ~A)
+         ;; Hartree energy.
+         (Eh ~A))
      ,@body))"
-	      (first (get-values (get-page "c")))
-	      (first (get-values (get-page "e")))
-	      (first (get-values (get-page "tbohrrada0")))
-	      (first (get-values (get-page "hr"))))
+              (first (get-values (get-page "c")))
+              (first (get-values (get-page "e")))
+              (first (get-values (get-page "tbohrrada0")))
+              (first (get-values (get-page "hr"))))
     (format nil "~
 \(defmacro with-early-bindings (&body body)
   `(let (;; Speed of light in vacuum.
-	 (c 299792458)
+         (c 299792458)
          ;; Planck constant.
-	 (h 6.62607015L-34)
-	 ;; Elementary charge.
-	 (e 1.602176634L-19)
+         (h 6.62607015L-34)
+         ;; Elementary charge.
+         (e 1.602176634L-19)
          ;; Boltzmann constant.
-	 (k 1.380649L-23)
+         (k 1.380649L-23)
          ;; Avogadro constant.
-	 (na 6.02214076L+23))
+         (na 6.02214076L+23))
      ,@body))")))
 
 (defparameter *exact*
@@ -211,18 +211,18 @@ Use this to overwrite erroneous values from the HTML page.")
 ~A CODATA recommended value.
 
 See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
-	  (char-upcase (aref name 0)) (subseq name 1) *release* key))
+          (char-upcase (aref name 0)) (subseq name 1) *release* key))
 
 ;; Program entry point.
 (defun generate-code (release &key use-cache)
   (let ((*release* release)
-	(*cache-directory* nil)
-	(*lib-directory* nil)
-	(*constants* nil))
+        (*cache-directory* nil)
+        (*lib-directory* nil)
+        (*constants* nil))
     (let ((subdir (format nil "codata-~A" *release*)))
       (when use-cache
-	(setf *cache-directory* (make-pathname :directory (list :relative "cache" subdir)))
-	(ensure-directories-exist *cache-directory*))
+        (setf *cache-directory* (make-pathname :directory (list :relative "cache" subdir)))
+        (ensure-directories-exist *cache-directory*))
       (setf *lib-directory* (make-pathname :directory (list :relative "lib" subdir)))
       (ensure-directories-exist *lib-directory*))
     (initialize-constants)
@@ -239,25 +239,25 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
     (with-output-to-string (stream body)
       (format stream "~A~2%" (with-early-bindings))
       (iter (for (key . name) :in *constants*)
-	    (for page = (get-page key))
-	    (when (null page)
-	      (next-iteration))
-	    (for values = (get-values page t))
-	    (when (null values)
-	      (error "Should not happen!"))
-	    (for correct = (assoc key *correct* :test #'string=))
-	    (when (not (null correct))
-	      (setf values (rest correct)))
-	    (for symbol = (wash-name name))
-	    (format stream "(define-constant ~A~%    " symbol)
-	    (for exact = (assoc key *exact* :test #'string=))
-	    (if (null exact)
-		(format stream "~S" values)
-	      (let ((*print-case* :downcase)
-		    (*print-right-margin* 132))
-		(format stream "((with-early-bindings ~S) ~S ~S)"
-			(cdr exact) (second values) (third values))))
-	    (format stream "~%  ~S)~2%" (doc-string key name values))))
+            (for page = (get-page key))
+            (when (null page)
+              (next-iteration))
+            (for values = (get-values page t))
+            (when (null values)
+              (error "Should not happen!"))
+            (for correct = (assoc key *correct* :test #'string=))
+            (when (not (null correct))
+              (setf values (rest correct)))
+            (for symbol = (wash-name name))
+            (format stream "(define-constant ~A~%    " symbol)
+            (for exact = (assoc key *exact* :test #'string=))
+            (if (null exact)
+                (format stream "~S" values)
+              (let ((*print-case* :downcase)
+                    (*print-right-margin* 132))
+                (format stream "((with-early-bindings ~S) ~S ~S)"
+                        (cdr exact) (second values) (third values))))
+            (format stream "~%  ~S)~2%" (doc-string key name values))))
     ;; Write output file.
     (when (string-match "#-\\(and\\) BODY\\s+" templ)
       (setf templ (replace-match body)))
