@@ -1,4 +1,4 @@
-;;; codata-common.lisp --- common definitions.
+;;; codata-common.lisp --- common definitions
 
 ;; Copyright (C) 2012 Ralph Schleicher
 
@@ -71,35 +71,35 @@ for inline expansion by the compiler."
 (defmacro define-constant (name (value abs-tol rel-tol) &optional doc)
   "Define a physical constant."
   (let ((val (gensym "VAL"))
-	(str (gensym "STR"))
-	(num (gensym "NUM"))
-	(abs (gensym "ABS"))
-	(rel (gensym "REL")))
+        (str (gensym "STR"))
+        (num (gensym "NUM"))
+        (abs (gensym "ABS"))
+        (rel (gensym "REL")))
     `(let* ((*read-default-float-format* 'long-float)
-	    ;; The value itself.
-	    (,val ,value)
-	    ;; String value.
-	    (,str (if (stringp ,val)
-		      ,val
-		    (nstring-upcase (write-to-string ,val))))
-	    ;; Numeric value.
-	    (,num (if (stringp ,val)
-		      (read-from-string ,val)
-		    ,val))
-	    ;; Standard uncertainty.
-	    (,abs (read-from-string ,abs-tol))
-	    ;; Relative standard uncertainty.
-	    (,rel (read-from-string ,rel-tol)))
+            ;; The value itself.
+            (,val ,value)
+            ;; String value.
+            (,str (if (stringp ,val)
+                      ,val
+                    (nstring-upcase (write-to-string ,val))))
+            ;; Numeric value.
+            (,num (if (stringp ,val)
+                      (read-from-string ,val)
+                    ,val))
+            ;; Standard uncertainty.
+            (,abs (read-from-string ,abs-tol))
+            ;; Relative standard uncertainty.
+            (,rel (read-from-string ,rel-tol)))
        (export (quote ,name))
        (defconst ,name ,num
-	 ,@(when doc (list doc)))
+         ,@(when doc (list doc)))
        (defsubst ,name ()
-	 ,@(when doc (list (concatenate 'string doc "
+         ,@(when doc (list (concatenate 'string doc "
 
 Primary value is the value of the constant, secondary value is the
 standard uncertainty, and tertiary value is the relative standard
 uncertainty.")))
-	 (values ,name ,abs ,rel))
+         (values ,name ,abs ,rel))
        (setf (gethash (quote ,name) *string-value*) ,str)
        (quote ,name))))
 
@@ -108,8 +108,8 @@ uncertainty.")))
   "Newton's method."
   (let ((x 0))
     (loop (setf x (- xo (funcall f/df xo)))
-	  (when (= x xo)
-	    (return x))
-	  (setf xo x))))
+          (when (= x xo)
+            (return x))
+          (setf xo x))))
 
 ;;; codata-common.lisp ends here

@@ -1,4 +1,4 @@
-;;; codata.lisp --- CODATA recommended values of physical constants.
+;;; codata.lisp --- CODATA recommended values of physical constants
 
 ;; Copyright (C) 2012 Ralph Schleicher
 
