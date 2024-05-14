@@ -1,0 +1,80 @@
+;;; codata-2022.lisp --- 2022 CODATA recommended values
+
+;; Copyright (C) 2013 Ralph Schleicher
+
+;; Redistribution and use in source and binary forms, with or without
+;; modification, are permitted provided that the following conditions
+;; are met:
+;;
+;;    * Redistributions of source code must retain the above copyright
+;;      notice, this list of conditions and the following disclaimer.
+;;
+;;    * Redistributions in binary form must reproduce the above copyright
+;;      notice, this list of conditions and the following disclaimer in
+;;      the documentation and/or other materials provided with the
+;;      distribution.
+;;
+;;    * Neither the name of the copyright holder nor the names of its
+;;      contributors may be used to endorse or promote products derived
+;;      from this software without specific prior written permission.
+;;
+;; THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+;; "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+;; LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+;; FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE
+;; COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+;; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+;; BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+;; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+;; CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+;; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+;; ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+;; POSSIBILITY OF SUCH DAMAGE.
+
+;;; Commentary:
+
+;; Automatically generated, do not edit!
+
+;;; Code:
+
+(in-package :common-lisp-user)
+
+(defpackage :codata-recommended-values-2022
+  (:use :common-lisp :codata-recommended-values-common)
+  (:documentation "2022 CODATA recommended values."))
+
+(in-package :codata-recommended-values-2022)
+
+#-(and) BODY
+
+;;;; Backward Compatibility
+
+(export '220-lattice-spacing-of-silicon)
+(define-symbol-macro 220-lattice-spacing-of-silicon
+  lattice-spacing-of-ideal-silicon-at-220)
+
+(export 'bohr-magneton-in-inverse-meters-per-tesla)
+(define-symbol-macro bohr-magneton-in-inverse-meters-per-tesla
+  bohr-magneton-in-inverse-meter-per-tesla)
+
+(export 'boltzmann-constant-in-inverse-meters-per-kelvin)
+(define-symbol-macro boltzmann-constant-in-inverse-meters-per-kelvin
+  boltzmann-constant-in-inverse-meter-per-kelvin)
+
+(export 'cu-x-unit)
+(define-symbol-macro cu-x-unit
+  copper-x-unit)
+
+(export 'mo-x-unit)
+(define-symbol-macro mo-x-unit
+  molybdenum-x-unit)
+
+(export 'electric-constant)
+(define-symbol-macro electric-constant
+  vacuum-electric-permittivity)
+
+(export 'magnetic-constant)
+(define-symbol-macro magnetic-constant
+  vacuum-magnetic-permeability)
+
+;;; codata-2022.lisp ends here
