@@ -118,4 +118,4 @@
                    )))
     (generate-code 2018)))
 
-;;; generate-codata-2018.lisp ends here"
+;;; generate-codata-2018.lisp ends here
