@@ -1,4 +1,4 @@
-;;; codata-2018.lisp --- 2018 CODATA recommended values.
+;;; codata-2018.lisp --- 2018 CODATA recommended values
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -47,15 +47,15 @@
 
 (defmacro with-early-bindings (&body body)
   `(let (;; Speed of light in vacuum.
-	 (c 299792458)
+         (c 299792458)
          ;; Planck constant.
-	 (h 6.62607015L-34)
-	 ;; Elementary charge.
-	 (e 1.602176634L-19)
+         (h 6.62607015L-34)
+         ;; Elementary charge.
+         (e 1.602176634L-19)
          ;; Boltzmann constant.
-	 (k 1.380649L-23)
+         (k 1.380649L-23)
          ;; Avogadro constant.
-	 (na 6.02214076L+23))
+         (na 6.02214076L+23))
      ,@body))
 
 (define-constant alpha-particle-mass

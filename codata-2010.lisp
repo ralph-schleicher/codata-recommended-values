@@ -1,4 +1,4 @@
-;;; codata-2010.lisp --- 2010 CODATA recommended values.
+;;; codata-2010.lisp --- 2010 CODATA recommended values
 
 ;; Copyright (C) 2013 Ralph Schleicher
 
@@ -47,15 +47,15 @@
 
 (defmacro with-early-bindings (&body body)
   `(let (;; Speed of light in vacuum.
-	 (c 299792458)
-	 ;; Magnetic constant.
-	 (mu (* 4 pi 1L-7))
-	 ;; Elementary charge.
-	 (e 1.602176565L-19)
-	 ;; Atomic unit of length.
-	 (a 0.52917721092L-10)
-	 ;; Hartree energy.
-	 (Eh 4.35974434L-18))
+         (c 299792458)
+         ;; Magnetic constant.
+         (mu (* 4 pi 1L-7))
+         ;; Elementary charge.
+         (e 1.602176565L-19)
+         ;; Atomic unit of length.
+         (a 0.52917721092L-10)
+         ;; Hartree energy.
+         (Eh 4.35974434L-18))
      ,@body))
 
 (define-constant alpha-particle-mass
