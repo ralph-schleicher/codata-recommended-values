@@ -255,7 +255,9 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?~A>."
                 (format stream "~S" values)
               (let ((*print-case* :downcase)
                     (*print-right-margin* 132))
-                (format stream "((with-early-bindings ~S) ~S ~S)"
+                (format stream (if (stringp (cdr exact))
+                                   "((with-early-bindings ~A) ~S ~S)"
+                                 "((with-early-bindings ~S) ~S ~S)")
                         (cdr exact) (second values) (third values))))
             (format stream "~%  ~S)~2%" (doc-string key name values))))
     ;; Write output file.
