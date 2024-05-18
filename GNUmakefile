@@ -37,10 +37,11 @@ PACKAGE := codata-recommended-values
 VERSION := $(shell cat VERSION)
 TARNAME := $(PACKAGE)-$(VERSION)
 
-built_sources = \
+BUILT_SOURCES = \
 codata-2010.lisp \
 codata-2014.lisp \
 codata-2018.lisp \
+codata-2022.lisp \
 $(nil)
 
 ### Rules
@@ -49,7 +50,7 @@ $(nil)
 	sbcl --non-interactive --load generate-code.lisp --load generate-$*.lisp
 
 .PHONY: all
-all: $(built_sources)
+all: $(BUILT_SOURCES)
 
 .PHONY: check
 check: all
@@ -57,7 +58,7 @@ check: all
 
 .PHONY: clean
 clean:
-	rm -f $(built_sources)
+	rm -f $(BUILT_SOURCES)
 
 ### Maintenance
 
