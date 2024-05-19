@@ -45,6 +45,7 @@
                (:file "codata-2010")
                (:file "codata-2014")
                (:file "codata-2018")
+               (:file "codata-2022")
                (:file "codata")))
 
 ;;; codata-recommended-values.asd ends here
