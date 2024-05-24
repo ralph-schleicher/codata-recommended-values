@@ -38,25 +38,23 @@
 (ql:quickload "codata-recommended-values")
 (ql:quickload "rs-doc") ;private
 
-(rs-doc:generate-doc
- :package :codata-recommended-values
- :symbols '(codata-recommended-values:string-value)
- :output-format :html
- :output #P"doc/codata-recommended-values.html")
+(in-package :rs-doc-user)
 
-(rs-doc:generate-doc
- :package :codata-recommended-values-2010
- :output-format :html
- :output #P"doc/codata-recommended-values-2010.html")
-
-(rs-doc:generate-doc
- :package :codata-recommended-values-2014
- :output-format :html
- :output #P"doc/codata-recommended-values-2014.html")
-
-(rs-doc:generate-doc
- :package :codata-recommended-values-2018
- :output-format :html
- :output #P"doc/codata-recommended-values-2018.html")
+(let* ((system-name "codata-recommended-values")
+       (doc-directory (append (pathname-directory
+                               (asdf:system-source-directory system-name))
+                              (list "doc"))))
+  (flet ((generate (package-name &rest arguments)
+           (let ((data (apply #'gather-doc :package (string-upcase package-name) arguments))
+                 (path (make-pathname :directory doc-directory :name package-name)))
+             (generate-doc :data data
+                           :output-format :html
+                           :output (make-pathname :type "html" :defaults path))
+             (generate-doc :data data
+                           :output-format :text
+                           :output (make-pathname :type "txt" :defaults path)))))
+    (generate system-name :symbols '(codata-recommended-values:string-value))
+    (dolist (release '(2010 2014 2018 2022))
+      (generate (format nil "~A-~A" system-name release)))))
 
 ;;; generate-doc.lisp ends here
