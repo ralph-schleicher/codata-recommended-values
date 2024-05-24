@@ -48,7 +48,7 @@ uncertainty.  Floating-point numbers are of the type ‘long-float’.
 Please note that some of the constants have values which can not be
 represented as IEEE 754 single precision floating-point numbers.
 
-This package also exports the symbols of the 2018 CODATA recommended
+This package also exports the symbols of the 2022 CODATA recommended
 values."))
 
 (in-package :codata-recommended-values)
@@ -66,7 +66,7 @@ The string representation uses the letter E as the exponent char."
   (values (gethash symbol *string-value*)))
 
 ;; Export latest values.
-(do-external-symbols (symbol (find-package :codata-recommended-values-2018))
+(do-external-symbols (symbol (find-package :codata-recommended-values-2022))
   (import symbol)
   (export symbol))
 
