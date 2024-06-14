@@ -33,24 +33,6 @@
 
 ;;; Code:
 
-(in-package :common-lisp-user)
-
-(defpackage :codata-recommended-values
-  (:use :common-lisp :codata-recommended-values-common)
-  (:documentation "CODATA recommended values of physical constants.
-
-See <http://physics.nist.gov/cuu/index.html>.
-
-All CODATA recommended values are defined as a constant and as a
-function.  The function returns three values, the value of the
-constant, the standard uncertainty, and the relative standard
-uncertainty.  Floating-point numbers are of the type ‘long-float’.
-Please note that some of the constants have values which can not be
-represented as IEEE 754 single precision floating-point numbers.
-
-This package also exports the symbols of the 2022 CODATA recommended
-values."))
-
 (in-package :codata-recommended-values)
 
 (export 'string-value)
