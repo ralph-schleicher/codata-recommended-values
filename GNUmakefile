@@ -46,7 +46,7 @@ $(nil)
 
 ### Rules
 
-%.lisp: %.lisp.in
+%.lisp: %.lisp.in generate-code.lisp
 	sbcl --non-interactive --load generate-code.lisp --load generate-$*.lisp
 
 .PHONY: all
