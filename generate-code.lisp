@@ -164,6 +164,7 @@ Return value is a list of strings."
          (a ~A)
          ;; Hartree energy.
          (Eh ~A))
+     (declare (ignorable c mu e a Eh))
      ,@body))"
               (first (get-values (get-page "c")))
               (first (get-values (get-page "e")))
@@ -181,6 +182,7 @@ Return value is a list of strings."
          (k 1.380649L-23)
          ;; Avogadro constant.
          (na 6.02214076L+23))
+     (declare (ignorable c h e k na))
      ,@body))")))
 
 (defun exact-values ()
