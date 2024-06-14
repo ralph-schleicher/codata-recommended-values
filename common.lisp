@@ -35,19 +35,8 @@
 
 (in-package :common-lisp-user)
 
-(defpackage :codata-recommended-values-common
-  (:use :common-lisp)
-  (:documentation "Common definitions.
+(in-package :codata-recommended-values-internal)
 
-Use at your own risk."))
-
-(in-package :codata-recommended-values-common)
-
-(export '*string-value*)
-(defvar *string-value* (make-hash-table :test 'eq)
-  "Cache for string representations.")
-
-(export 'defconst)
 (defmacro defconst (name value &optional doc)
   "Define a constant variable.
 
@@ -56,7 +45,6 @@ is reused when the ‘defconst’ form is evaluated again."
   `(defconstant ,name (if (boundp ',name) (symbol-value ',name) ,value)
      ,@(when doc (list doc))))
 
-(export 'defsubst)
 (defmacro defsubst (name arg-list &body body)
   "Define an inline function.
 
@@ -66,50 +54,5 @@ for inline expansion by the compiler."
      (declaim (inline ,name))
      (defun ,name ,arg-list
        ,@body)))
-
-(export 'define-constant)
-(defmacro define-constant (name (value abs-tol rel-tol) &optional doc)
-  "Define a physical constant."
-  (let ((val (gensym "VAL"))
-        (str (gensym "STR"))
-        (num (gensym "NUM"))
-        (abs (gensym "ABS"))
-        (rel (gensym "REL")))
-    `(let* ((*read-default-float-format* 'long-float)
-            ;; The value itself.
-            (,val ,value)
-            ;; String value.
-            (,str (if (stringp ,val)
-                      ,val
-                    (nstring-upcase (write-to-string ,val))))
-            ;; Numeric value.
-            (,num (if (stringp ,val)
-                      (read-from-string ,val)
-                    ,val))
-            ;; Standard uncertainty.
-            (,abs (read-from-string ,abs-tol))
-            ;; Relative standard uncertainty.
-            (,rel (read-from-string ,rel-tol)))
-       (export (quote ,name))
-       (defconst ,name ,num
-         ,@(when doc (list doc)))
-       (defsubst ,name ()
-         ,@(when doc (list (concatenate 'string doc "
-
-Primary value is the value of the constant, secondary value is the
-standard uncertainty, and tertiary value is the relative standard
-uncertainty.")))
-         (values ,name ,abs ,rel))
-       (setf (gethash (quote ,name) *string-value*) ,str)
-       (quote ,name))))
-
-(export 'newton)
-(defun newton (f/df xo)
-  "Newton's method."
-  (let ((x 0))
-    (loop (setf x (- xo (funcall f/df xo)))
-          (when (= x xo)
-            (return x))
-          (setf xo x))))
 
 ;;; codata-common.lisp ends here
