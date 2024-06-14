@@ -41,7 +41,9 @@
   :license "Modified BSD License"
   :version (:read-file-line "VERSION")
   :serial t
-  :components ((:file "codata-common")
+  :components ((:file "packages")
+               (:file "common")
+               (:file "internal")
                (:file "codata-2010")
                (:file "codata-2014")
                (:file "codata-2018")
