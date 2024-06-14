@@ -40,37 +40,33 @@
 
 (defmacro define-constant (name (value abs-tol rel-tol) &optional doc)
   "Define a physical constant."
-  (let ((val (gensym "VAL"))
-        (str (gensym "STR"))
-        (num (gensym "NUM"))
-        (abs (gensym "ABS"))
+  (let ((abs (gensym "ABS"))
         (rel (gensym "REL")))
-    `(let* ((*read-default-float-format* 'long-float)
-            ;; The value itself.
-            (,val ,value)
-            ;; String value.
-            (,str (if (stringp ,val)
-                      ,val
-                    (nstring-upcase (write-to-string ,val))))
-            ;; Numeric value.
-            (,num (if (stringp ,val)
-                      (read-from-string ,val)
-                    ,val))
-            ;; Standard uncertainty.
-            (,abs (read-from-string ,abs-tol))
-            ;; Relative standard uncertainty.
-            (,rel (read-from-string ,rel-tol)))
+    `(progn
        (export (quote ,name))
-       (defconst ,name ,num
+       (defconst ,name ,(if (stringp value)
+                            `(let ((*read-default-float-format* 'long-float))
+                               (read-from-string ,value))
+                          value)
          ,@(when doc (list doc)))
-       (defsubst ,name ()
-         ,@(when doc (list (concatenate 'string doc "
+       (let (;; Standard uncertainty.
+             (,abs (let ((*read-default-float-format* 'long-float))
+                     (read-from-string ,abs-tol)))
+             ;; Relative standard uncertainty.
+             (,rel (let ((*read-default-float-format* 'long-float))
+                     (read-from-string ,rel-tol))))
+         (defsubst ,name ()
+           ,@(when doc (list (concatenate 'string doc "
 
 Primary value is the value of the constant, secondary value is the
 standard uncertainty, and tertiary value is the relative standard
 uncertainty.")))
-         (values ,name ,abs ,rel))
-       (setf (gethash (quote ,name) *string-value*) ,str)
+           (values ,name ,abs ,rel)))
+       (setf (gethash (quote ,name) *string-value*)
+             ,(if (stringp value)
+                  value
+                `(let ((*read-default-float-format* 'long-float))
+                   (nstring-upcase (write-to-string ,value)))))
        (quote ,name))))
 
 (defun newton (f/df xo)
