@@ -37,12 +37,6 @@
 
 ;;; Code:
 
-(in-package :common-lisp-user)
-
-(defpackage :codata-recommended-values-2022
-  (:use :common-lisp :codata-recommended-values-common)
-  (:documentation "2022 CODATA recommended values."))
-
 (in-package :codata-recommended-values-2022)
 
 (defmacro with-early-bindings (&body body)
@@ -56,6 +50,7 @@
          (k 1.380649L-23)
          ;; Avogadro constant.
          (na 6.02214076L+23))
+     (declare (ignorable c h e k na))
      ,@body))
 
 (define-constant alpha-particle-mass

@@ -37,12 +37,6 @@
 
 ;;; Code:
 
-(in-package :common-lisp-user)
-
-(defpackage :codata-recommended-values-2010
-  (:use :common-lisp :codata-recommended-values-common)
-  (:documentation "2010 CODATA recommended values."))
-
 (in-package :codata-recommended-values-2010)
 
 (defmacro with-early-bindings (&body body)
@@ -56,6 +50,7 @@
          (a 0.52917721092L-10)
          ;; Hartree energy.
          (Eh 4.35974434L-18))
+     (declare (ignorable c mu e a Eh))
      ,@body))
 
 (define-constant alpha-particle-mass
