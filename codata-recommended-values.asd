@@ -48,6 +48,15 @@
                (:file "codata-2014")
                (:file "codata-2018")
                (:file "codata-2022")
-               (:file "codata")))
+               (:file "codata"))
+  :in-order-to ((test-op (test-op "codata-recommended-values/tests"))))
+
+(defsystem "codata-recommended-values/tests"
+  :description "CODATA recommended values of physical constants test suite."
+  :author "Ralph Schleicher <rs@ralph-schleicher.de>"
+  :license "Modified BSD License"
+  :depends-on ("codata-recommended-values" "lisp-unit" "iterate" "rs-cll")
+  :components ((:file "tests"))
+  :perform (test-op (o c) (symbol-call :codata-recommended-values-tests :main)))
 
 ;;; codata-recommended-values.asd ends here
