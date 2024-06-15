@@ -163,6 +163,26 @@ alpha-particle-relative-atomic-mass ()
    uncertainty.
 
                                                                       [Constant]
+alpha-particle-rms-charge-radius
+   Alpha particle rms charge radius.
+
+   2022 CODATA recommended value.
+
+   See <http://physics.nist.gov/cgi-bin/cuu/Value?ral>.
+
+                                                                      [Function]
+alpha-particle-rms-charge-radius ()
+   Alpha particle rms charge radius.
+
+   2022 CODATA recommended value.
+
+   See <http://physics.nist.gov/cgi-bin/cuu/Value?ral>.
+
+   Primary value is the value of the constant, secondary value is the
+   standard uncertainty, and tertiary value is the relative standard
+   uncertainty.
+
+                                                                      [Constant]
 angstrom-star
    Angstrom star.
 
