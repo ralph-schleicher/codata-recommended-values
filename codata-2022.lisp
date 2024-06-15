@@ -101,6 +101,14 @@ See <http://physics.nist.gov/cgi-bin/cuu/Value?mmal>.")
 
 See <http://physics.nist.gov/cgi-bin/cuu/Value?aral>.")
 
+(define-constant alpha-particle-rms-charge-radius
+    ("1.6785E-15" "0.0021E-15" "1.2E-3")
+  "Alpha particle rms charge radius.
+
+2022 CODATA recommended value.
+
+See <http://physics.nist.gov/cgi-bin/cuu/Value?ral>.")
+
 (define-constant alpha-particle-electron-mass-ratio
     ("7294.29954171" "0.00000017" "2.4E-11")
   "Alpha particle-electron mass ratio.
