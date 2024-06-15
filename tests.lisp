@@ -83,7 +83,7 @@
             (for quantity = (let ((string (subseq line 0 quantity-end)))
                               (setf string (string-trim " " string))
                               ;; See comment in file ‘CONSTANTS’.
-                              (when (rs:string-match "1st" string)
+                              (when (string-match "1st" string)
                                 (setf string (replace-match "first")))
                               (when (string-match "2nd" string)
                                 (setf string (replace-match "second")))
