@@ -34,7 +34,7 @@
 ## Code:
 
 PACKAGE := codata-recommended-values
-VERSION := $(shell cat VERSION)
+VERSION := $(shell head -n1 VERSION)
 TARNAME := $(PACKAGE)-$(VERSION)
 
 BUILT_SOURCES = \
