@@ -26,6 +26,7 @@ malc2mev        alpha particle mass energy equivalent in MeV
 malu            alpha particle mass in u
 mmal            alpha particle molar mass
 aral            alpha particle relative atomic mass
+ral             alpha particle rms charge radius
 malsme          alpha particle-electron mass ratio
 malsmp          alpha particle-proton mass ratio
 angstar         Angstrom star
