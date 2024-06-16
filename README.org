@@ -1,0 +1,59 @@
+* CODATA Recommended Values
+
+CODATA recommended values of physical constants.
+
+See ‹https://physics.nist.gov/cuu/Constants/index.html›.
+
+All CODATA recommended values are defined as a constant and as a
+function.  The function returns three values, the value of the
+constant, the standard uncertainty, and the relative standard
+uncertainty.  Floating-point numbers are of the type ‘long-float’.
+Please note that some of the constants have values which can not be
+represented as IEEE 754 single precision floating-point numbers.
+
+Usage:
+
+#+BEGIN_SRC lisp
+(ql:quickload :codata-recommended-values)
+
+(defun E (m)
+  (symbol-macrolet ((c codata-recommended-values:speed-of-light-in-vacuum))
+    (* m c c)))
+#+END_SRC
+
+The latest values are available via the ‘codata-recommended-values’
+package.  If you need a previously issued value, append the year to
+the package name, for example, ‘codata-recommended-values-2010’.
+There are packages for the years 2022, 2018, 2014, and 2010.
+
+
+** Unit Tests
+
+The test procedure requires two definitions from my ‘[[https://github.com/ralph-schleicher/rs-cll][rs-cll]]’ library
+which is not available in Quicklisp.  However, you can execute the
+unit tests by calling
+
+#+BEGIN_SRC lisp
+(asdf:test-system "codata-recommended-values")
+#+END_SRC
+
+The expected output is listed below.
+
+#+BEGIN_EXAMPLE
+CODATA-2010: 335 assertions passed, 0 failed.
+
+CODATA-2014: 335 assertions passed, 0 failed.
+
+CODATA-2018: 354 assertions passed, 0 failed.
+
+CODATA-2022: 355 assertions passed, 0 failed.
+
+STRING-VALUES: 1379 assertions passed, 0 failed.
+
+Unit Test Summary
+ | 2758 assertions total
+ | 2758 passed
+ | 0 failed
+ | 0 execution errors
+ | 0 missing tests
+#+END_EXAMPLE
