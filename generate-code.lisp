@@ -153,37 +153,39 @@ Return value is a list of strings."
 (defun with-early-bindings ()
   (if (< *release* 2018)
       (format nil "~
-\(defmacro with-early-bindings (&body body)
-  `(let (;; Speed of light in vacuum.
-         (c ~A)
-         ;; Magnetic constant.
-         (mu (* 4 pi 1L-7))
-         ;; Elementary charge.
-         (e ~A)
-         ;; Atomic unit of length.
-         (a ~A)
-         ;; Hartree energy.
-         (Eh ~A))
-     (declare (ignorable c mu e a Eh))
-     ,@body))"
+\(eval-when (:compile-toplevel :load-toplevel :execute)
+  (defmacro with-early-bindings (&body body)
+    `(let (;; Speed of light in vacuum.
+           (c ~A)
+           ;; Magnetic constant.
+           (mu (* 4 pi 1L-7))
+           ;; Elementary charge.
+           (e ~A)
+           ;; Atomic unit of length.
+           (a ~A)
+           ;; Hartree energy.
+           (Eh ~A))
+       (declare (ignorable c mu e a Eh))
+       ,@body)))"
               (first (get-values (get-page "c")))
               (first (get-values (get-page "e")))
               (first (get-values (get-page "tbohrrada0")))
               (first (get-values (get-page "hr"))))
     (format nil "~
-\(defmacro with-early-bindings (&body body)
-  `(let (;; Speed of light in vacuum.
-         (c 299792458)
-         ;; Planck constant.
-         (h 6.62607015L-34)
-         ;; Elementary charge.
-         (e 1.602176634L-19)
-         ;; Boltzmann constant.
-         (k 1.380649L-23)
-         ;; Avogadro constant.
-         (na 6.02214076L+23))
-     (declare (ignorable c h e k na))
-     ,@body))")))
+\(eval-when (:compile-toplevel :load-toplevel :execute)
+  (defmacro with-early-bindings (&body body)
+    `(let (;; Speed of light in vacuum.
+           (c 299792458)
+           ;; Planck constant.
+           (h 6.62607015L-34)
+           ;; Elementary charge.
+           (e 1.602176634L-19)
+           ;; Boltzmann constant.
+           (k 1.380649L-23)
+           ;; Avogadro constant.
+           (na 6.02214076L+23))
+       (declare (ignorable c h e k na))
+       ,@body)))")))
 
 (defun exact-values ()
   "Return an alist of exact values of the form (KEY . FORM)."
