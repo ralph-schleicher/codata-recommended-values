@@ -39,19 +39,20 @@
 
 (in-package :codata-recommended-values-2018)
 
-(defmacro with-early-bindings (&body body)
-  `(let (;; Speed of light in vacuum.
-         (c 299792458)
-         ;; Planck constant.
-         (h 6.62607015L-34)
-         ;; Elementary charge.
-         (e 1.602176634L-19)
-         ;; Boltzmann constant.
-         (k 1.380649L-23)
-         ;; Avogadro constant.
-         (na 6.02214076L+23))
-     (declare (ignorable c h e k na))
-     ,@body))
+(eval-when (:compile-toplevel :load-toplevel :execute)
+  (defmacro with-early-bindings (&body body)
+    `(let (;; Speed of light in vacuum.
+           (c 299792458)
+           ;; Planck constant.
+           (h 6.62607015L-34)
+           ;; Elementary charge.
+           (e 1.602176634L-19)
+           ;; Boltzmann constant.
+           (k 1.380649L-23)
+           ;; Avogadro constant.
+           (na 6.02214076L+23))
+       (declare (ignorable c h e k na))
+       ,@body)))
 
 (define-constant alpha-particle-mass
     ("6.6446573357E-27" "0.0000000020E-27" "3.0E-10")

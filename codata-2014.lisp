@@ -39,19 +39,20 @@
 
 (in-package :codata-recommended-values-2014)
 
-(defmacro with-early-bindings (&body body)
-  `(let (;; Speed of light in vacuum.
-         (c 299792458)
-         ;; Magnetic constant.
-         (mu (* 4 pi 1L-7))
-         ;; Elementary charge.
-         (e 1.6021766208L-19)
-         ;; Atomic unit of length.
-         (a 0.52917721067L-10)
-         ;; Hartree energy.
-         (Eh 4.359744650L-18))
-     (declare (ignorable c mu e a Eh))
-     ,@body))
+(eval-when (:compile-toplevel :load-toplevel :execute)
+  (defmacro with-early-bindings (&body body)
+    `(let (;; Speed of light in vacuum.
+           (c 299792458)
+           ;; Magnetic constant.
+           (mu (* 4 pi 1L-7))
+           ;; Elementary charge.
+           (e 1.6021766208L-19)
+           ;; Atomic unit of length.
+           (a 0.52917721067L-10)
+           ;; Hartree energy.
+           (Eh 4.359744650L-18))
+       (declare (ignorable c mu e a Eh))
+       ,@body)))
 
 (define-constant alpha-particle-mass
     ("6.644657230E-27" "0.000000082E-27" "1.2E-8")
